@@ -9,19 +9,24 @@ import Child from '../src/child/Child';
 import Header from '../src/header';
 import Footer from '../src/footer';
 import Home from './dictionary/page/main_page';
+import Category from './dictionary/page/category_page';
 
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
     <div>
     <Header />
-      <h2>Accounts</h2>
+      <h1>Accounts</h1>
       <Switch>
         <Route exact pate="/" component={Home} />
+        <Route exact pate="/category" component={Category} />
       </Switch>
       <ul>
         <li>
           <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/category">Category Page</Link>
         </li>
         <li>
           <Link to="/netflix">Netflix</Link>

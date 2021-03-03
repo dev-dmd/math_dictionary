@@ -1,9 +1,9 @@
 import React from 'react'
 
-function index() {
+const index = () => {
   return (
     <div>
-      <h2>Home Page</h2>
+      <h2>Category Page</h2>
     </div>
   )
 }
