@@ -8,7 +8,7 @@ import {
 import Child from '../src/child/Child';
 import Header from '../src/header';
 import Footer from '../src/footer';
-import Home from './dictionary/page';
+import Home from './dictionary/page/main_page';
 
 function App() {
   return (
@@ -20,6 +20,9 @@ function App() {
         <Route exact pate="/" component={Home} />
       </Switch>
       <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
         <li>
           <Link to="/netflix">Netflix</Link>
         </li>
