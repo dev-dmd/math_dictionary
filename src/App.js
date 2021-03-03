@@ -8,6 +8,7 @@ import {
 import Child from '../src/child/Child';
 import Header from '../src/header';
 import Footer from '../src/footer';
+import Home from './dictionary/page';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
     <div>
     <Header />
       <h2>Accounts</h2>
+      <Switch>
+        <Route exact pate="/" component={Home} />
+      </Switch>
       <ul>
         <li>
           <Link to="/netflix">Netflix</Link>
