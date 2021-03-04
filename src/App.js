@@ -18,8 +18,8 @@ function App() {
     <Header />
       <h1>Accounts</h1>
       <Switch>
-        <Route exact pate="/" component={Home} />
-        <Route exact pate="/category" component={Category} />
+        <Route exact path="/" component={Home} />
+        <Route path="/category" component={Category} />
       </Switch>
       <ul>
         <li>
