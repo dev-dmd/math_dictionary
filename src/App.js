@@ -1,54 +1,47 @@
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
+  Route
 } from "react-router-dom";
-import Child from '../src/child/Child';
-import Header from '../src/header';
-import Footer from '../src/footer';
-import Home from './dictionary/page/main_page';
-import Category from './dictionary/page/category_page';
+import SignInPage from './components/auth/SignInPage';
+import LogInPage from './components/auth/LogInPage';
+import Pages from './pages';
+import Header from './components/header';
+
+
 
 function App() {
+  const [showLog, setShowLog] = useState(false); 
+
+  const handleLoginClick = ()=> {
+    const showsLoginPage = window.location.href !== 'http://localhost:3000/math_dictionary/login' ||  window.location.href !== 'http://localhost:3000/math_dictionary/signin'
+    setShowLog(showsLoginPage);
+  };
+
+  const handleHomeClick = ()=> {
+    const showsHomePage = window.location.href === "http://localhost:3000/math_dictionary/";
+    setShowLog(showsHomePage);
+  };
   return (
     <Router basename={process.env.PUBLIC_URL}>
-    <div>
-    <Header />
-      <h1>Accounts</h1>
+    { 
+      showLog ? null : <Header handleLoginClick={handleLoginClick} />
+    } 
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/category" component={Category} />
+        <Route exact path="/">
+          <Pages />
+        </Route>
+        <Route path="/signin">
+          <SignInPage handleHomeClick={handleHomeClick} />
+        </Route>
+        <Route path="/login">
+          <LogInPage handleHomeClick={handleHomeClick} />
+        </Route>
       </Switch>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/category">Category Page</Link>
-        </li>
-        <li>
-          <Link to="/netflix">Netflix</Link>
-        </li>
-        <li>
-          <Link to="/zillow-group">Zillow Group</Link>
-        </li>
-        <li>
-          <Link to="/yahoo">Yahoo</Link>
-        </li>
-        <li>
-          <Link to="/modus-create">Modus Create</Link>
-        </li>
-      </ul>
-
-      <Switch>
-        <Route path="/:id" children={<Child />} />
-      </Switch>
-      <Footer />
-    </div>
-  </Router>
-  );
+    </Router>
+  )
 }
 
 export default App;
