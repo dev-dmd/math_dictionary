@@ -5,8 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import PaletteIcon from '@material-ui/icons/Palette';
-import { NavLink } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import SignedOutLinks from '../header/SignedOutLinks';
+import SignedInLinks from '../header/SignedInLinks';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -27,16 +27,20 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  navBtn: {
+    color: '#f4f4f4',
+    fontSize: '14px',
+    textTransform: 'capitalize',
+    
+  },
   sectionDesktop: {
     display: 'none',
-    color: '#fff',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
   },
   sectionMobile: {
     display: 'flex',
-    color: '#fff',
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
@@ -64,41 +68,9 @@ export default function PrimarySearchAppBar({ handleLoginClick }) {
             aria-label="open drawer"
           >
             <PaletteIcon />
-          </IconButton>
-          <div className={classes.sectionDesktop}>
-            <NavLink to="/login" onClick={handleLoginClick} className={classes.sectionDesktop}>
-              <Button color="inherit">
-                Log in
-              </Button>     
-            </NavLink>
-            <NavLink exact to="/signin" onClick={handleLoginClick} className={classes.sectionDesktop}>
-              <Button color="inherit">
-                Sign In
-              </Button>     
-            </NavLink>
-            <NavLink to="/login" onClick={handleLoginClick} className={classes.sectionMobile}>
-              <Button color="inherit">
-                Log In
-              </Button>     
-            </NavLink>
-          </div>
-          <div className={classes.sectionMobile}>
-            <NavLink to="/login" onClick={handleLoginClick}  className={classes.sectionDesktop}>
-              <Button color="inherit">
-                Log in
-              </Button>     
-            </NavLink>
-            <NavLink exact to="/signin" onClick={handleLoginClick} className={classes.sectionDesktop}>
-              <Button color="inherit">
-                Sign In
-              </Button>     
-            </NavLink>
-            <NavLink to="/login" className={classes.sectionMobile}>
-              <Button color="inherit">
-                Log In
-              </Button>     
-            </NavLink>
-          </div>
+          </IconButton>          
+          <SignedOutLinks handleLoginClick={handleLoginClick} />
+          <SignedInLinks handleLoginClick={handleLoginClick} />
         </Toolbar>
       </AppBar>   
     </div>

@@ -9,8 +9,7 @@ import SignInPage from './components/auth/SignInPage';
 import LogInPage from './components/auth/LogInPage';
 import Pages from './pages';
 import Header from './components/header';
-
-
+import Dashboard from './components/dashboard';
 
 function App() {
   const [showLog, setShowLog] = useState(false); 
@@ -32,6 +31,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Pages />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
         <Route path="/signin">
           <SignInPage handleHomeClick={handleHomeClick} />
