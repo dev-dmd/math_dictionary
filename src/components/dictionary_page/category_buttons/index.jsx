@@ -1,23 +1,28 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
 import {
   Link
 } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
 }));
 
-function DictionaryPage() {
+function CategoryButtons() {
   const classes = useStyles();
-  return (
-      <div className={classes.root}>
-      <h1>Dictionary Page</h1>
+  return ( 
+    <Grid item xs>
+      <Paper className={classes.paper}>
         <Link to="/math_dictionary/digit">
           <Button variant="contained">Digit</Button>
         </Link>
@@ -26,8 +31,9 @@ function DictionaryPage() {
             Greek
           </Button>
         </Link>
-      </div>
+      </Paper>
+    </Grid>
   )
 }
 
-export default DictionaryPage;
+export default CategoryButtons;
