@@ -12,16 +12,16 @@ import Header from './components/header';
 import Dashboard from './components/dashboard';
 
 function App() {
-  const [showLog, setShowLog] = useState(false); 
-
+  const showsLoginHeader = window.location.href !== 'http://localhost:3000/math_dictionary/login' ||  window.location.href !== 'http://localhost:3000/math_dictionary/signin';
+  const [showLog, setShowLog] = useState(showsLoginHeader); 
+  
   const handleLoginClick = ()=> {
-    const showsLoginPage = window.location.href !== 'http://localhost:3000/math_dictionary/login' ||  window.location.href !== 'http://localhost:3000/math_dictionary/signin'
-    setShowLog(showsLoginPage);
+    setShowLog(showsLoginHeader);
   };
 
   const handleHomeClick = ()=> {
-    const showsHomePage = window.location.href === "http://localhost:3000/math_dictionary/";
-    setShowLog(showsHomePage);
+    const showsHomeHeader = window.location.href === "http://localhost:3000/math_dictionary/";
+    setShowLog(showsHomeHeader);
   };
   return (
     <Router basename={process.env.PUBLIC_URL}>
