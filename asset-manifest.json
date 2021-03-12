@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/math_dictionary/static/css/main.d3a21b1a.chunk.css",
-    "main.js": "/math_dictionary/static/js/main.d459a1be.chunk.js",
-    "main.js.map": "/math_dictionary/static/js/main.d459a1be.chunk.js.map",
+    "main.js": "/math_dictionary/static/js/main.8a37beb6.chunk.js",
+    "main.js.map": "/math_dictionary/static/js/main.8a37beb6.chunk.js.map",
     "runtime-main.js": "/math_dictionary/static/js/runtime-main.8aff668c.js",
     "runtime-main.js.map": "/math_dictionary/static/js/runtime-main.8aff668c.js.map",
-    "static/js/2.2e33ce2d.chunk.js": "/math_dictionary/static/js/2.2e33ce2d.chunk.js",
-    "static/js/2.2e33ce2d.chunk.js.map": "/math_dictionary/static/js/2.2e33ce2d.chunk.js.map",
+    "static/js/2.761a1664.chunk.js": "/math_dictionary/static/js/2.761a1664.chunk.js",
+    "static/js/2.761a1664.chunk.js.map": "/math_dictionary/static/js/2.761a1664.chunk.js.map",
     "index.html": "/math_dictionary/index.html",
     "static/css/main.d3a21b1a.chunk.css.map": "/math_dictionary/static/css/main.d3a21b1a.chunk.css.map",
-    "static/js/2.2e33ce2d.chunk.js.LICENSE.txt": "/math_dictionary/static/js/2.2e33ce2d.chunk.js.LICENSE.txt",
+    "static/js/2.761a1664.chunk.js.LICENSE.txt": "/math_dictionary/static/js/2.761a1664.chunk.js.LICENSE.txt",
     "static/media/cardinal.dff49555.svg": "/math_dictionary/static/media/cardinal.dff49555.svg",
     "static/media/digit.8d3288a6.svg": "/math_dictionary/static/media/digit.8d3288a6.svg",
     "static/media/figure.8b19eca8.svg": "/math_dictionary/static/media/figure.8b19eca8.svg",
     "static/media/fraction.77be6368.svg": "/math_dictionary/static/media/fraction.77be6368.svg",
-    "static/media/greece.4cf46361.svg": "/math_dictionary/static/media/greece.4cf46361.svg",
+    "static/media/greek.4cf46361.svg": "/math_dictionary/static/media/greek.4cf46361.svg",
     "static/media/large_num.04ad798d.svg": "/math_dictionary/static/media/large_num.04ad798d.svg",
     "static/media/measurement.acb33b57.svg": "/math_dictionary/static/media/measurement.acb33b57.svg",
     "static/media/ordinal.5085e034.svg": "/math_dictionary/static/media/ordinal.5085e034.svg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8aff668c.js",
-    "static/js/2.2e33ce2d.chunk.js",
+    "static/js/2.761a1664.chunk.js",
     "static/css/main.d3a21b1a.chunk.css",
-    "static/js/main.d459a1be.chunk.js"
+    "static/js/main.8a37beb6.chunk.js"
   ]
 }
