@@ -26,7 +26,7 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
     { 
-      showLog ? null : <Header handleLoginClick={handleLoginClick} />
+      !showLog ? <Header handleLoginClick={handleLoginClick} /> : null
     } 
       <Switch>
         <Route exact path="/">

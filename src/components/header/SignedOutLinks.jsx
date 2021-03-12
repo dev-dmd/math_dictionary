@@ -69,9 +69,9 @@ export default function SignedOutLinks({ handleLoginClick }) {
           </Button>     
         </NavLink>
         <NavLink to="/login" onClick={handleLoginClick} >
-        <Button color="inherit" className={classes.navBtn}>
-        Log in
-        </Button>     
+          <Button color="inherit" className={classes.navBtn}>
+            Log in
+          </Button>     
         </NavLink>
       </div>
     </div>

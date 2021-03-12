@@ -8,18 +8,18 @@ import DictionaryTable from '../dictionary_table';
 import DictionarySearch from '../dictionary_search';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 // Button Icons
-import measurement_icon from '../category_buttons/category_icons/measurement.svg';
-import digit_icon from '../category_buttons/category_icons/digit.svg';
-import figure_icon from '../category_buttons/category_icons/figure.svg';
-import greece_icon from '../category_buttons/category_icons/greece.svg';
-import cardinal_icon from '../category_buttons/category_icons/cardinal.svg';
-import polygons_icon from '../category_buttons/category_icons/polygons.svg';
-import large_nums_icon from '../category_buttons/category_icons/large_num.svg';
-import prefixes_icon from '../category_buttons/category_icons/prefixes.svg';
-import fraction_icon from '../category_buttons/category_icons/fraction.svg';
-import ordinal_nums_icon from '../category_buttons/category_icons/ordinal.svg';
-import roots_icon from '../category_buttons/category_icons/roots.svg';
-import trigonometry_icon from '../category_buttons/category_icons/sinusoid.svg';
+import measurement_icon from '../category_icons/measurement.svg';
+import digit_icon from '../category_icons/digit.svg';
+import figure_icon from '../category_icons/figure.svg';
+import greek_icon from '../category_icons/greek.svg';
+import cardinal_icon from '../category_icons/cardinal.svg';
+import polygons_icon from '../category_icons/polygons.svg';
+import large_nums_icon from '../category_icons/large_num.svg';
+import prefixes_icon from '../category_icons/prefixes.svg';
+import fraction_icon from '../category_icons/fraction.svg';
+import ordinal_nums_icon from '../category_icons/ordinal.svg';
+import roots_icon from '../category_icons/roots.svg';
+import trigonometry_icon from '../category_icons/sinusoid.svg';
 // Button Icons
 
 const useStyles = makeStyles((theme) => ({
@@ -62,7 +62,7 @@ const rows = [
   createButtons('measurement', measurement_icon, 'merne jedinice', 'units of measurement'),
   createButtons('digit', digit_icon, 'place value of digit', 'mesna vrednost cifre'),
   createButtons('figures', figure_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('greece', greece_icon, 'place value of digit', 'mesna vrednost cifre'),
+  createButtons('greek', greek_icon, 'place value of digit', 'mesna vrednost cifre'),
   createButtons('cardinal', cardinal_icon, 'place value of digit', 'mesna vrednost cifre'),
   createButtons('polygons', polygons_icon, 'place value of digit', 'mesna vrednost cifre'),
   createButtons('large-nums', large_nums_icon, 'place value of digit', 'mesna vrednost cifre'),

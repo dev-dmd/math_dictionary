@@ -14,7 +14,7 @@ function Pages() {
     <Router>
       <div component="main" className="page">
         <Switch>
-          <Route exact path="/math_dictionary">
+          <Route exact path="/math_dictionary/">
             <Dictionary />
           </Route>
           <Route path="/math_dictionary/digit">
