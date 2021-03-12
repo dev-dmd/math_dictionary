@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/App.css","webpack://src/components/auth/style.css"],"names":[],"mappings":"AAAA,UACE,wBACF,CCFA,qBACE,UACF","file":"main.179ff193.chunk.css","sourcesContent":["html, body {\r\n  background-color: #f4f4f4;\r\n}",".MuiFormControl-root {\r\n  width: 100%;\r\n}"]}
