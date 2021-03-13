@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -10,38 +10,38 @@ import LogInPage from './components/auth/LogInPage';
 import Pages from './pages';
 import Header from './components/header';
 import Dashboard from './components/dashboard';
+import VideoModal from './components/video_modal';
 
 function App() {
-  const showsLoginHeader = window.location.href !== 'http://localhost:3000/math_dictionary/login' ||  window.location.href !== 'http://localhost:3000/math_dictionary/signin';
-  const [showLog, setShowLog] = useState(showsLoginHeader); 
-  
-  const handleLoginClick = ()=> {
-    setShowLog(showsLoginHeader);
+  // Video Modal
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
-  const handleHomeClick = ()=> {
-    const showsHomeHeader = window.location.href === "http://localhost:3000/math_dictionary/";
-    setShowLog(showsHomeHeader);
+  const handleClose = () => {
+    setOpen(false);
   };
+  
   return (
     <Router basename={process.env.PUBLIC_URL}>
-    { 
-      !showLog ? <Header handleLoginClick={handleLoginClick} /> : null
-    } 
       <Switch>
         <Route exact path="/">
+          <Header handleOpen={handleOpen} />
           <Pages />
         </Route>
         <Route path="/dashboard">
           <Dashboard />
         </Route>
         <Route path="/signin">
-          <SignInPage handleHomeClick={handleHomeClick} />
+          <SignInPage />
         </Route>
         <Route path="/login">
-          <LogInPage handleHomeClick={handleHomeClick} />
+          <LogInPage />
         </Route>
       </Switch>
+      <VideoModal onClose={handleClose} open={open} />
     </Router>
   )
 }

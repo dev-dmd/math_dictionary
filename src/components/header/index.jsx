@@ -7,10 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import PaletteIcon from '@material-ui/icons/Palette';
 import SignedOutLinks from '../header/SignedOutLinks';
 import SignedInLinks from '../header/SignedInLinks';
+import VideocamIcon from '@material-ui/icons/Videocam';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    '& > *': {
+      backgroundColor: 'transparent!important'
+    }
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -45,9 +50,12 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  video_icon: {
+    color: '#fff'
+  }
 }));
 
-export default function PrimarySearchAppBar({ handleLoginClick }) {
+export default function PrimarySearchAppBar({ handleLoginClick, handleOpen }) {
   const classes = useStyles();
 
   return (
@@ -68,7 +76,10 @@ export default function PrimarySearchAppBar({ handleLoginClick }) {
             aria-label="open drawer"
           >
             <PaletteIcon />
-          </IconButton>          
+          </IconButton>
+          <IconButton className={classes.video_icon} onClick={handleOpen}>
+            <VideocamIcon />
+          </IconButton>
           <SignedOutLinks handleLoginClick={handleLoginClick} />
           <SignedInLinks handleLoginClick={handleLoginClick} />
         </Toolbar>
