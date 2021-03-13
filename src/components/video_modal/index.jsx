@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import CardMedia from '@material-ui/core/CardMedia';
+import { Card } from '@material-ui/core';
+import video from './mp4-pig.mp4';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -12,9 +15,16 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '2px solid #a3a3a3',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2),
+  },
+  media: {
+    height: 270,
+    [theme.breakpoints.down('sm')]: {
+      width: 270,
+      height: 150,
+    },
   },
 }));
 
@@ -35,10 +45,15 @@ export default function VideoModal({ open, onClose }) {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
+          <Card className={classes.media}>       
+              <CardMedia
+              component="video"
+              controls
+              
+              src={video}
+              title="math"
+              />      
+          </Card>
         </Fade>
       </Modal>
     </div>

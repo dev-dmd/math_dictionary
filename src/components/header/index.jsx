@@ -4,11 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import PaletteIcon from '@material-ui/icons/Palette';
 import SignedOutLinks from '../header/SignedOutLinks';
 import SignedInLinks from '../header/SignedInLinks';
-import VideocamIcon from '@material-ui/icons/Videocam';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import video_icon from './video_tutorial.svg';
+import Icon from '@material-ui/core/Icon';
+import PaletteDrawer from '../palette_drawer';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -69,16 +69,11 @@ export default function PrimarySearchAppBar({ handleLoginClick, handleOpen }) {
             Math Dictionary
           </Typography>
           <div className={classes.grow} />
-          <IconButton
-            edge="start"
-            className={classes.sectionMobile}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <PaletteIcon />
-          </IconButton>
+          <PaletteDrawer />
           <IconButton className={classes.video_icon} onClick={handleOpen}>
-            <VideocamIcon />
+            <Icon>
+              <img height="100%" width="100%" src={video_icon}/>
+            </Icon>
           </IconButton>
           <SignedOutLinks handleLoginClick={handleLoginClick} />
           <SignedInLinks handleLoginClick={handleLoginClick} />
