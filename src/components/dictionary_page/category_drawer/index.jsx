@@ -75,8 +75,8 @@ export default function CategoryDrawer() {
             <ListItemText primary="Categories" />
           </ListItem>
         </ListSubheader>
-        {[{text:'Units of Measurement', icons: measurement}, {text:'Place value of digit', icons: digit}, {text:'Names of Geometric Figures and Solids', icons: figures}, {text:'Greek Alphabet', icons: greek}, {text:'Cardinal Numbers', icons: cardinal}, {text:'Names of Polygons', icons: polygons}, {text:'Names of Large Numbers', icons: large_num}, {text:'Prefixes for Units of Measurement', icons: prefixes}, {text:'Fractions', icons: fractions}, {text:'Ordinal Numbers', icons: ordinal}, {text:'Exponents and Radicals (roots)', icons: roots}, {text:'Trigonometry', icons: sinusoid}].map((row) => (
-          <Link to={`math_dictionary/${row.text}`}>
+        {[{text:'Units of Measurement', link:"units", icons: measurement}, {text:'Place value of digit', link:"digit", icons: digit}, {text:'Names of Geometric Figures and Solids', link:"figures", icons: figures}, {text:'Greek Alphabet', link:"greek", icons: greek}, {text:'Cardinal Numbers', link:"cardinal", icons: cardinal}, {text:'Names of Polygons', link:"polygons", icons: polygons}, {text:'Names of Large Numbers', link:"large-numbers", icons: large_num}, {text:'Prefixes for Units of Measurement', link:"prefixes", icons: prefixes}, {text:'Fractions', link:"fractions", icons: fractions}, {text:'Ordinal Numbers', link:"ordinal-numbers", icons: ordinal}, {text:'Exponents and Radicals (roots)', link:"roots", icons: roots}, {text:'Trigonometry', link:"trigonometry", icons: sinusoid}].map((row) => (
+          <Link to={`math_dictionary/${row.link}`}>
             <ListItem button key={row.text}>
               <ListItemIcon>
                 <Icon>
