@@ -6,9 +6,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import SignedOutLinks from '../header/SignedOutLinks';
 import SignedInLinks from '../header/SignedInLinks';
-import video_icon from './video_tutorial.svg';
+import video_icon from './videoBtn.svg';
 import Icon from '@material-ui/core/Icon';
-import PaletteDrawer from '../palette_drawer';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -51,7 +50,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   video_icon: {
-    color: '#fff'
+    color: '#fff',
+    '& > .MuiIconButton-label .MuiIcon-root': {
+      width: '2.5rem',
+      height: '1.5rem'
+    }
   }
 }));
 
@@ -68,8 +71,7 @@ export default function PrimarySearchAppBar({ handleLoginClick, handleOpen }) {
           <Typography className={classes.mobTitle} variant="h6" noWrap>
             Math Dictionary
           </Typography>
-          <div className={classes.grow} />
-          <PaletteDrawer />
+          <div className={classes.grow} />          
           <IconButton className={classes.video_icon} onClick={handleOpen}>
             <Icon>
               <img height="100%" width="100%" src={video_icon}/>

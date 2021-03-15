@@ -21,6 +21,9 @@ import ordinal_nums_icon from '../category_icons/ordinal.svg';
 import roots_icon from '../category_icons/roots.svg';
 import trigonometry_icon from '../category_icons/sinusoid.svg';
 // Button Icons
+import category_data from '../category_data/category.json';
+import CategoryDrawer from '../category_drawer';
+console.log(category_data);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,6 +84,7 @@ function Dictionary() {
   return (
       <div className={classes.root}>
         <Grid container spacing={3}>
+        <CategoryDrawer />
           <Grid className={classes.btns_container} item xs>
             <Paper elevation={0} className={classes.btns}>  
             {

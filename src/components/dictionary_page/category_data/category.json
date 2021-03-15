@@ -1,0 +1,782 @@
+{
+    "category": [
+      {
+        "digits": [
+            {
+                "id": "1",
+                "Srpski | Mesna vrednost": "Milijarde",
+                "English | Place value": "Bilions"
+            },
+            {
+                "id": "2",
+                "Srpski | Mesna vrednost": "Stotine miliona",
+                "English | Place value": "Hundred-milions"
+            },
+            {
+                "id": "3",
+                "Srpski | Mesna vrednost": "Desetice miliona",
+                "English | Place value": "Ten-milions"
+            },
+            {
+                "id": "4",
+                "Srpski | Mesna vrednost": "Milioni",
+                "English | Place value": "Milions"
+            },
+            {
+                "id": "5",
+                "Srpski | Mesna vrednost": "Stotine hiljada",
+                "English | Place value": "Hundred-thousands"
+            },
+            {
+                "id": "6",
+                "Srpski | Mesna vrednost": "Desetice hiljada",
+                "English | Place value": "Ten-thousands"
+            },
+            {
+                "id": "7",
+                "Srpski | Mesna vrednost": "Hiljade",
+                "English | Place value": "Thousands"
+            },
+            {
+                "id": "8",
+                "Srpski | Mesna vrednost": "Stotine",
+                "English | Place value": "Hundreds"
+            },
+            {
+                "id": "9",
+                "Srpski | Mesna vrednost": "Desetice",
+                "English | Place value": "Tens"
+            },
+            {
+                "id": "10",
+                "Srpski | Mesna vrednost": "Jedinice",
+                "English | Place value": "Ones"
+            },
+            {
+                "id": "11",
+                "Srpski | Mesna vrednost": "Decimalni zarez (tačka)",
+                "English | Place value": "Decimal point"
+            },
+            {
+                "id": "12",
+                "Srpski | Mesna vrednost": "Desetih",
+                "English | Place value": "Tenths"
+            },
+            {
+                "id": "13",
+                "Srpski | Mesna vrednost": "Stotih",
+                "English | Place value": "Hundresths"
+            },
+            {
+                "id": "14",
+                "Srpski | Mesna vrednost": "Hiljaditih",
+                "English | Place value": "Thousandths"
+            },
+            {
+                "id": "15",
+                "Srpski | Mesna vrednost": "Desetohiljaditih",
+                "English | Place value": "Teh-thousandths"
+            },
+            {
+                "id": "16",
+                "Srpski | Mesna vrednost": "Stohiljaditih",
+                "English | Place value": "Hundred-thousandths"
+            },
+            {
+                "id": "17",
+                "Srpski | Mesna vrednost": "Milionitih",
+                "English | Place value": "Milionths"
+            },
+            {
+                "id": "18",
+                "Srpski | Mesna vrednost": "Desetomilionitih",
+                "English | Place value": "Ten-milionths"
+            },
+            {
+                "id": "19",
+                "Srpski | Mesna vrednost": "Stomilionitih",
+                "English | Place value": "Hundred-milionths"
+            },
+            {
+                "id": "20",
+                "Srpski | Mesna vrednost": "Milijarditih",
+                "English | Place value": "Bilionths"
+            }
+        ],
+        "example": [
+            {
+                "id": "1",
+                "num": "4,567.94",
+                "Srpski": "4 hiljade 5 stotina 6 desetica 7 jedinica 9 desetih 3 stotih 8 hiljaditih 6 desetohiljaditih",
+                "English": "0"
+            },
+            {
+                "id": "2",
+                "num": "4,567,9386",
+                "Srpski": "0",
+                "English": "4 thousands 5 hundreds 6 tens 7 ones 9 tenths 3 hundredths 8 thousandths 6 ten-thousandths"
+            },
+            {
+                "id": "3",
+                "num": "4567.9386",
+                "Srpski": "četiri hiljade petsto šesdeset sedam i devet hiljada trista osamdeset šest desetohiljaditih četiri hiljade petsto šesdeset sedam zarez devet tri osam šest",
+                "English": "0"
+            },
+            {
+                "id": "4",
+                "num": "45,679,386",
+                "Srpski": "0",
+                "English": "four thousand five hundred sixty-seven point /and nine thousand three hundred eighty-six ten-thousandths four thousand five hundred sixty-seven point nine three eight six"
+            },
+            {
+                "id": "5",
+                "num": "0.5866",
+                "Srpski": "nula zarez pet osam šest šest",
+                "English": "0"
+            },
+            {
+                "id": "6",
+                "num": "0.5866 ",
+                "Srpski": "0",
+                "English": "point five eight six six (ne čitamo nulu / we don’t read zero)"
+            }
+        ]
+      },
+      {
+        "greek": [
+            {
+                "id": "1",
+                "symbols": "A",
+                "Srpski": "Alfa",
+                "Englesh": "Alpha"
+            },
+            {
+                "id": "2",
+                "symbols": "B",
+                "Srpski": "Beta",
+                "Englesh": "Beta"
+            },
+            {
+                "id": "3",
+                "symbols": "G",
+                "Srpski": "Gama",
+                "Englesh": "Gamma"
+            },
+            {
+                "id": "4",
+                "symbols": "D",
+                "Srpski": "Delta",
+                "Englesh": "Delta"
+            },
+            {
+                "id": "5",
+                "symbols": "E",
+                "Srpski": "Epsilon",
+                "Englesh": "Epsilon"
+            },
+            {
+                "id": "6",
+                "symbols": "Z",
+                "Srpski": "Zeta",
+                "Englesh": "Zeta"
+            },
+            {
+                "id": "7",
+                "symbols": "E",
+                "Srpski": "Eta",
+                "Englesh": "Eta"
+            },
+            {
+                "id": "8",
+                "symbols": "T",
+                "Srpski": "Teta",
+                "Englesh": "Theta"
+            },
+            {
+                "id": "9",
+                "symbols": "I",
+                "Srpski": "Iota",
+                "Englesh": "Iota"
+            },
+            {
+                "id": "10",
+                "symbols": "K",
+                "Srpski": "Kapa",
+                "Englesh": "Kappa"
+            },
+            {
+                "id": "11",
+                "symbols": "L",
+                "Srpski": "Lambda",
+                "Englesh": "Lambda"
+            },
+            {
+                "id": "12",
+                "symbols": "M",
+                "Srpski": "Mi",
+                "Englesh": "Mu"
+            },
+            {
+                "id": "13",
+                "symbols": "N",
+                "Srpski": "Ni",
+                "Englesh": "Nu"
+            },
+            {
+                "id": "14",
+                "symbols": "K",
+                "Srpski": "Ksi",
+                "Englesh": "Xi"
+            },
+            {
+                "id": "15",
+                "symbols": "O",
+                "Srpski": "Omikron",
+                "Englesh": "Omicron"
+            },
+            {
+                "id": "16",
+                "symbols": "P",
+                "Srpski": "Pi",
+                "Englesh": "Pi"
+            },
+            {
+                "id": "17",
+                "symbols": "R",
+                "Srpski": "Ro",
+                "Englesh": "Rho"
+            },
+            {
+                "id": "18",
+                "symbols": "S",
+                "Srpski": "Sigma",
+                "Englesh": "Sigma"
+            },
+            {
+                "id": "19",
+                "symbols": "T",
+                "Srpski": "Tau",
+                "Englesh": "Tau"
+            },
+            {
+                "id": "20",
+                "symbols": "I",
+                "Srpski": "Ipsilon",
+                "Englesh": "Upsilon"
+            },
+            {
+                "id": "21",
+                "symbols": "F",
+                "Srpski": "Fi",
+                "Englesh": "Phi "
+            },
+            {
+                "id": "22",
+                "symbols": "H",
+                "Srpski": "Hi",
+                "Englesh": "Chi"
+            },
+            {
+                "id": "23",
+                "symbols": "P",
+                "Srpski": "Psi",
+                "Englesh": "Psi"
+            },
+            {
+                "id": "24",
+                "symbols": "O",
+                "Srpski": "Omega",
+                "Englesh": "Omega"
+            }
+        ]
+      },
+      {
+        "cardinal_page": [
+          {
+            "cardinal": [
+              {
+                  "id": "1",
+                  "brojevi | numbers": "0",
+                  "Kardinalni brojevi | Arapski brojevi": "nula",
+                  "Cardinal numbers | Arabic numerals": "zero",
+                  "Rimski brojevi | Roman numerals": "0"
+              },
+              {
+                  "id": "2",
+                  "brojevi | numbers": "1",
+                  "Kardinalni brojevi | Arapski brojevi": "jedan",
+                  "Cardinal numbers | Arabic numerals": "one",
+                  "Rimski brojevi | Roman numerals": "I"
+              },
+              {
+                  "id": "3",
+                  "brojevi | numbers": "2",
+                  "Kardinalni brojevi | Arapski brojevi": "dva",
+                  "Cardinal numbers | Arabic numerals": "two",
+                  "Rimski brojevi | Roman numerals": "II"
+              },
+              {
+                  "id": "4",
+                  "brojevi | numbers": "3",
+                  "Kardinalni brojevi | Arapski brojevi": "tri",
+                  "Cardinal numbers | Arabic numerals": "three",
+                  "Rimski brojevi | Roman numerals": "III"
+              },
+              {
+                  "id": "5",
+                  "brojevi | numbers": "4",
+                  "Kardinalni brojevi | Arapski brojevi": "četiri",
+                  "Cardinal numbers | Arabic numerals": "four",
+                  "Rimski brojevi | Roman numerals": "IV"
+              },
+              {
+                  "id": "6",
+                  "brojevi | numbers": "5",
+                  "Kardinalni brojevi | Arapski brojevi": "pet",
+                  "Cardinal numbers | Arabic numerals": "five",
+                  "Rimski brojevi | Roman numerals": "V"
+              },
+              {
+                  "id": "7",
+                  "brojevi | numbers": "6",
+                  "Kardinalni brojevi | Arapski brojevi": "šest",
+                  "Cardinal numbers | Arabic numerals": "six",
+                  "Rimski brojevi | Roman numerals": "VI"
+              },
+              {
+                  "id": "8",
+                  "brojevi | numbers": "7",
+                  "Kardinalni brojevi | Arapski brojevi": "sedam",
+                  "Cardinal numbers | Arabic numerals": "seven",
+                  "Rimski brojevi | Roman numerals": "VII"
+              },
+              {
+                  "id": "9",
+                  "brojevi | numbers": "8",
+                  "Kardinalni brojevi | Arapski brojevi": "osam",
+                  "Cardinal numbers | Arabic numerals": "eight",
+                  "Rimski brojevi | Roman numerals": "VIII"
+              },
+              {
+                  "id": "10",
+                  "brojevi | numbers": "9",
+                  "Kardinalni brojevi | Arapski brojevi": "devet",
+                  "Cardinal numbers | Arabic numerals": "nine",
+                  "Rimski brojevi | Roman numerals": "IX"
+              },
+              {
+                  "id": "11",
+                  "brojevi | numbers": "10",
+                  "Kardinalni brojevi | Arapski brojevi": "deset",
+                  "Cardinal numbers | Arabic numerals": "ten",
+                  "Rimski brojevi | Roman numerals": "X"
+              },
+              {
+                  "id": "12",
+                  "brojevi | numbers": "11",
+                  "Kardinalni brojevi | Arapski brojevi": "jedanaest",
+                  "Cardinal numbers | Arabic numerals": "eleven",
+                  "Rimski brojevi | Roman numerals": "XI"
+              },
+              {
+                  "id": "13",
+                  "brojevi | numbers": "12",
+                  "Kardinalni brojevi | Arapski brojevi": "dvanaest",
+                  "Cardinal numbers | Arabic numerals": "twelve",
+                  "Rimski brojevi | Roman numerals": "XII"
+              },
+              {
+                  "id": "14",
+                  "brojevi | numbers": "13",
+                  "Kardinalni brojevi | Arapski brojevi": "trinaest",
+                  "Cardinal numbers | Arabic numerals": "thirteen",
+                  "Rimski brojevi | Roman numerals": "XIII"
+              },
+              {
+                  "id": "15",
+                  "brojevi | numbers": "14",
+                  "Kardinalni brojevi | Arapski brojevi": "četrnaest",
+                  "Cardinal numbers | Arabic numerals": "fourteen",
+                  "Rimski brojevi | Roman numerals": "XIV"
+              },
+              {
+                  "id": "16",
+                  "brojevi | numbers": "15",
+                  "Kardinalni brojevi | Arapski brojevi": "petnaest",
+                  "Cardinal numbers | Arabic numerals": "fifteen",
+                  "Rimski brojevi | Roman numerals": "XV"
+              },
+              {
+                  "id": "17",
+                  "brojevi | numbers": "16",
+                  "Kardinalni brojevi | Arapski brojevi": "šesnaest",
+                  "Cardinal numbers | Arabic numerals": "sixteen",
+                  "Rimski brojevi | Roman numerals": "XVI"
+              },
+              {
+                  "id": "18",
+                  "brojevi | numbers": "17",
+                  "Kardinalni brojevi | Arapski brojevi": "sedamnaest",
+                  "Cardinal numbers | Arabic numerals": "seventeen",
+                  "Rimski brojevi | Roman numerals": "XVII"
+              },
+              {
+                  "id": "19",
+                  "brojevi | numbers": "18",
+                  "Kardinalni brojevi | Arapski brojevi": "osamnaest",
+                  "Cardinal numbers | Arabic numerals": "eighteen",
+                  "Rimski brojevi | Roman numerals": "XVIII"
+              },
+              {
+                  "id": "20",
+                  "brojevi | numbers": "19",
+                  "Kardinalni brojevi | Arapski brojevi": "devetnaest",
+                  "Cardinal numbers | Arabic numerals": "nineteen",
+                  "Rimski brojevi | Roman numerals": "XIX"
+              },
+              {
+                  "id": "21",
+                  "brojevi | numbers": "20",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset",
+                  "Cardinal numbers | Arabic numerals": "twenty",
+                  "Rimski brojevi | Roman numerals": "XX"
+              },
+              {
+                  "id": "22",
+                  "brojevi | numbers": "21",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset jedan",
+                  "Cardinal numbers | Arabic numerals": "twenty-one",
+                  "Rimski brojevi | Roman numerals": "XXI"
+              },
+              {
+                  "id": "23",
+                  "brojevi | numbers": "22",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset dva",
+                  "Cardinal numbers | Arabic numerals": "twenty-two",
+                  "Rimski brojevi | Roman numerals": "XXII"
+              },
+              {
+                  "id": "24",
+                  "brojevi | numbers": "23",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset tri",
+                  "Cardinal numbers | Arabic numerals": "twenty-three",
+                  "Rimski brojevi | Roman numerals": "XXIII"
+              },
+              {
+                  "id": "25",
+                  "brojevi | numbers": "24",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset četiri",
+                  "Cardinal numbers | Arabic numerals": "twenty-four",
+                  "Rimski brojevi | Roman numerals": "XXIV"
+              },
+              {
+                  "id": "26",
+                  "brojevi | numbers": "25",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset pet",
+                  "Cardinal numbers | Arabic numerals": "twenty-five",
+                  "Rimski brojevi | Roman numerals": "XXV"
+              },
+              {
+                  "id": "27",
+                  "brojevi | numbers": "26",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset šest",
+                  "Cardinal numbers | Arabic numerals": "twenty-six",
+                  "Rimski brojevi | Roman numerals": "XXVI"
+              },
+              {
+                  "id": "28",
+                  "brojevi | numbers": "27",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset sedam",
+                  "Cardinal numbers | Arabic numerals": "twenty-seven",
+                  "Rimski brojevi | Roman numerals": "XXVII"
+              },
+              {
+                  "id": "29",
+                  "brojevi | numbers": "28",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset osam",
+                  "Cardinal numbers | Arabic numerals": "twenty-eight",
+                  "Rimski brojevi | Roman numerals": "XXVIII"
+              },
+              {
+                  "id": "30",
+                  "brojevi | numbers": "29",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset devet",
+                  "Cardinal numbers | Arabic numerals": "twenty-nine",
+                  "Rimski brojevi | Roman numerals": "XXIX"
+              },
+              {
+                  "id": "31",
+                  "brojevi | numbers": "30",
+                  "Kardinalni brojevi | Arapski brojevi": "trideset",
+                  "Cardinal numbers | Arabic numerals": "thirty",
+                  "Rimski brojevi | Roman numerals": "XXX"
+              },
+              {
+                  "id": "32",
+                  "brojevi | numbers": "40",
+                  "Kardinalni brojevi | Arapski brojevi": "četrdeset",
+                  "Cardinal numbers | Arabic numerals": "forty",
+                  "Rimski brojevi | Roman numerals": "XL"
+              },
+              {
+                  "id": "33",
+                  "brojevi | numbers": "50",
+                  "Kardinalni brojevi | Arapski brojevi": "pedeset",
+                  "Cardinal numbers | Arabic numerals": "fifty",
+                  "Rimski brojevi | Roman numerals": "L"
+              },
+              {
+                  "id": "34",
+                  "brojevi | numbers": "60",
+                  "Kardinalni brojevi | Arapski brojevi": "šesdeset",
+                  "Cardinal numbers | Arabic numerals": "sixty",
+                  "Rimski brojevi | Roman numerals": "LX"
+              },
+              {
+                  "id": "35",
+                  "brojevi | numbers": "70",
+                  "Kardinalni brojevi | Arapski brojevi": "sedamdeset",
+                  "Cardinal numbers | Arabic numerals": "seventy",
+                  "Rimski brojevi | Roman numerals": "LXX"
+              },
+              {
+                  "id": "36",
+                  "brojevi | numbers": "80",
+                  "Kardinalni brojevi | Arapski brojevi": "osamdeset",
+                  "Cardinal numbers | Arabic numerals": "eighty",
+                  "Rimski brojevi | Roman numerals": "LXXX"
+              },
+              {
+                  "id": "37",
+                  "brojevi | numbers": "90",
+                  "Kardinalni brojevi | Arapski brojevi": "devedeset",
+                  "Cardinal numbers | Arabic numerals": "ninety",
+                  "Rimski brojevi | Roman numerals": "XC"
+              },
+              {
+                  "id": "38",
+                  "brojevi | numbers": "100",
+                  "Kardinalni brojevi | Arapski brojevi": "sto",
+                  "Cardinal numbers | Arabic numerals": "hundred",
+                  "Rimski brojevi | Roman numerals": "C"
+              },
+              {
+                  "id": "39",
+                  "brojevi | numbers": "200",
+                  "Kardinalni brojevi | Arapski brojevi": "dvesta",
+                  "Cardinal numbers | Arabic numerals": "two hundred",
+                  "Rimski brojevi | Roman numerals": "CC"
+              },
+              {
+                  "id": "40",
+                  "brojevi | numbers": "300",
+                  "Kardinalni brojevi | Arapski brojevi": "trista",
+                  "Cardinal numbers | Arabic numerals": "three hundred",
+                  "Rimski brojevi | Roman numerals": "CCC"
+              },
+              {
+                  "id": "41",
+                  "brojevi | numbers": "400",
+                  "Kardinalni brojevi | Arapski brojevi": "četiristo",
+                  "Cardinal numbers | Arabic numerals": "four hundred",
+                  "Rimski brojevi | Roman numerals": "CD"
+              },
+              {
+                  "id": "42",
+                  "brojevi | numbers": "500",
+                  "Kardinalni brojevi | Arapski brojevi": "petsto",
+                  "Cardinal numbers | Arabic numerals": "five hundred",
+                  "Rimski brojevi | Roman numerals": "D"
+              },
+              {
+                  "id": "43",
+                  "brojevi | numbers": "600",
+                  "Kardinalni brojevi | Arapski brojevi": "šesto",
+                  "Cardinal numbers | Arabic numerals": "six hundred",
+                  "Rimski brojevi | Roman numerals": "DC"
+              },
+              {
+                  "id": "44",
+                  "brojevi | numbers": "700",
+                  "Kardinalni brojevi | Arapski brojevi": "sedamsto",
+                  "Cardinal numbers | Arabic numerals": "seven hundred",
+                  "Rimski brojevi | Roman numerals": "DCC"
+              },
+              {
+                  "id": "45",
+                  "brojevi | numbers": "800",
+                  "Kardinalni brojevi | Arapski brojevi": "osamsto",
+                  "Cardinal numbers | Arabic numerals": "eight hundred",
+                  "Rimski brojevi | Roman numerals": "DCCC"
+              },
+              {
+                  "id": "46",
+                  "brojevi | numbers": "900",
+                  "Kardinalni brojevi | Arapski brojevi": "devesto",
+                  "Cardinal numbers | Arabic numerals": "nine hundred",
+                  "Rimski brojevi | Roman numerals": "CM"
+              },
+              {
+                  "id": "47",
+                  "brojevi | numbers": "1000",
+                  "Kardinalni brojevi | Arapski brojevi": "(jedna) hiljada ",
+                  "Cardinal numbers | Arabic numerals": "(one) thousand",
+                  "Rimski brojevi | Roman numerals": "M"
+              },
+              {
+                  "id": "48",
+                  "brojevi | numbers": "2000",
+                  "Kardinalni brojevi | Arapski brojevi": "dve hiljade",
+                  "Cardinal numbers | Arabic numerals": "two thousand",
+                  "Rimski brojevi | Roman numerals": "MM"
+              },
+              {
+                  "id": "49",
+                  "brojevi | numbers": "5000",
+                  "Kardinalni brojevi | Arapski brojevi": "pet hiljada",
+                  "Cardinal numbers | Arabic numerals": "five thousand",
+                  "Rimski brojevi | Roman numerals": "V"
+              },
+              {
+                  "id": "50",
+                  "brojevi | numbers": "10000",
+                  "Kardinalni brojevi | Arapski brojevi": "deset hiljada",
+                  "Cardinal numbers | Arabic numerals": "ten thousand",
+                  "Rimski brojevi | Roman numerals": "X"
+              },
+              {
+                  "id": "51",
+                  "brojevi | numbers": "20000",
+                  "Kardinalni brojevi | Arapski brojevi": "dvadeset hiljada",
+                  "Cardinal numbers | Arabic numerals": "twenty thousand",
+                  "Rimski brojevi | Roman numerals": "XX"
+              },
+              {
+                  "id": "52",
+                  "brojevi | numbers": "50000",
+                  "Kardinalni brojevi | Arapski brojevi": "pedeset hiljada",
+                  "Cardinal numbers | Arabic numerals": "fifty thousand",
+                  "Rimski brojevi | Roman numerals": "L"
+              },
+              {
+                  "id": "53",
+                  "brojevi | numbers": "100000",
+                  "Kardinalni brojevi | Arapski brojevi": "sto hiljada",
+                  "Cardinal numbers | Arabic numerals": "(one) hundred thousand",
+                  "Rimski brojevi | Roman numerals": "C"
+              },
+              {
+                  "id": "54",
+                  "brojevi | numbers": "200000",
+                  "Kardinalni brojevi | Arapski brojevi": "dvesto hiljada",
+                  "Cardinal numbers | Arabic numerals": "two hundred thousand",
+                  "Rimski brojevi | Roman numerals": "CC"
+              },
+              {
+                  "id": "55",
+                  "brojevi | numbers": "500000",
+                  "Kardinalni brojevi | Arapski brojevi": "petsto hiljada",
+                  "Cardinal numbers | Arabic numerals": "five hundred thousand",
+                  "Rimski brojevi | Roman numerals": "D or |V|"
+              },
+              {
+                  "id": "56",
+                  "brojevi | numbers": "1000000",
+                  "Kardinalni brojevi | Arapski brojevi": "(jedan) milion",
+                  "Cardinal numbers | Arabic numerals": "one million",
+                  "Rimski brojevi | Roman numerals": "M or |M|"
+              },
+              {
+                  "id": "57",
+                  "brojevi | numbers": "2000000",
+                  "Kardinalni brojevi | Arapski brojevi": "dva miliona",
+                  "Cardinal numbers | Arabic numerals": "two million",
+                  "Rimski brojevi | Roman numerals": "MM or |XX|"
+              },
+              {
+                  "id": "58",
+                  "brojevi | numbers": "5000000",
+                  "Kardinalni brojevi | Arapski brojevi": "pet miliona",
+                  "Cardinal numbers | Arabic numerals": "five million",
+                  "Rimski brojevi | Roman numerals": "V or |L|"
+              },
+              {
+                  "id": "59",
+                  "brojevi | numbers": "10000000",
+                  "Kardinalni brojevi | Arapski brojevi": "deset miliona",
+                  "Cardinal numbers | Arabic numerals": "ten million",
+                  "Rimski brojevi | Roman numerals": "X or |C|"
+              }
+          ]
+          },
+          {
+
+            "example": [
+                {
+                    "id": "1",
+                    "Srpski": "jednocifren broj",
+                    "English": "one-digit number"
+                },
+                {
+                    "id": "2",
+                    "Srpski": "dvocifren broj",
+                    "English": "two-digit number"
+                },
+                {
+                    "id": "3",
+                    "Srpski": "trocifren broj",
+                    "English": "three-digit number"
+                },
+                {
+                    "id": "4",
+                    "Srpski": "n-tocifren broj",
+                    "English": "n-digit number"
+                }
+            ]
+          },
+          {
+            "example_two": [
+              {
+                  "id": "1",
+                  "brojevi | numbers": "3207",
+                  "Srpski": "tri hiljade dvesta sedam ",
+                  "English": "three thousand two hundred seven"
+              },
+              {
+                  "id": "2",
+                  "brojevi | numbers": "4571",
+                  "Srpski": "četiri hiljade petsto sedamdeset jedan",
+                  "English": "four thousand five hundred seventy-one"
+              },
+              {
+                  "id": "3",
+                  "brojevi | numbers": "18760",
+                  "Srpski": "osamnaest hiljada sedamsto šesdeset",
+                  "English": "eighteen thousand seven hundred sixty"
+              },
+              {
+                  "id": "4",
+                  "brojevi | numbers": "903478",
+                  "Srpski": "devetsto tri hiljade četiristo sedamdeset osam",
+                  "English": "nine hundred three thousand four hundred seventy-eight"
+              }
+            ]
+          }
+        ]  
+      },
+      {
+        "polygons": [
+          {
+            "one": ["1", "2", "3"]
+          },
+          {
+            "two": ["4", "5", "6"]
+          },
+          {
+            "three": ["9", "8", "7"]
+          }
+        ]
+      }
+      
+    ]
+}
