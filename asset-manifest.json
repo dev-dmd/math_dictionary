@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/math_dictionary/static/css/main.d3a21b1a.chunk.css",
-    "main.js": "/math_dictionary/static/js/main.ebd0aa01.chunk.js",
-    "main.js.map": "/math_dictionary/static/js/main.ebd0aa01.chunk.js.map",
+    "main.css": "/math_dictionary/static/css/main.b50f0389.chunk.css",
+    "main.js": "/math_dictionary/static/js/main.b055b189.chunk.js",
+    "main.js.map": "/math_dictionary/static/js/main.b055b189.chunk.js.map",
     "runtime-main.js": "/math_dictionary/static/js/runtime-main.8aff668c.js",
     "runtime-main.js.map": "/math_dictionary/static/js/runtime-main.8aff668c.js.map",
-    "static/js/2.042482f8.chunk.js": "/math_dictionary/static/js/2.042482f8.chunk.js",
-    "static/js/2.042482f8.chunk.js.map": "/math_dictionary/static/js/2.042482f8.chunk.js.map",
+    "static/js/2.0901b097.chunk.js": "/math_dictionary/static/js/2.0901b097.chunk.js",
+    "static/js/2.0901b097.chunk.js.map": "/math_dictionary/static/js/2.0901b097.chunk.js.map",
     "index.html": "/math_dictionary/index.html",
-    "static/css/main.d3a21b1a.chunk.css.map": "/math_dictionary/static/css/main.d3a21b1a.chunk.css.map",
-    "static/js/2.042482f8.chunk.js.LICENSE.txt": "/math_dictionary/static/js/2.042482f8.chunk.js.LICENSE.txt",
+    "static/css/main.b50f0389.chunk.css.map": "/math_dictionary/static/css/main.b50f0389.chunk.css.map",
+    "static/js/2.0901b097.chunk.js.LICENSE.txt": "/math_dictionary/static/js/2.0901b097.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/math_dictionary/static/media/bakground_board.9a05df6a.jpg",
     "static/media/cardinal.dff49555.svg": "/math_dictionary/static/media/cardinal.dff49555.svg",
     "static/media/digit.8d3288a6.svg": "/math_dictionary/static/media/digit.8d3288a6.svg",
     "static/media/figure.8b19eca8.svg": "/math_dictionary/static/media/figure.8b19eca8.svg",
     "static/media/fraction.77be6368.svg": "/math_dictionary/static/media/fraction.77be6368.svg",
-    "static/media/greek.4cf46361.svg": "/math_dictionary/static/media/greek.4cf46361.svg",
+    "static/media/greek.06122416.svg": "/math_dictionary/static/media/greek.06122416.svg",
     "static/media/large_num.04ad798d.svg": "/math_dictionary/static/media/large_num.04ad798d.svg",
     "static/media/measurement.acb33b57.svg": "/math_dictionary/static/media/measurement.acb33b57.svg",
     "static/media/mp4-pig.a65adab2.mp4": "/math_dictionary/static/media/mp4-pig.a65adab2.mp4",
@@ -23,12 +24,12 @@
     "static/media/prefixes.e945c38a.svg": "/math_dictionary/static/media/prefixes.e945c38a.svg",
     "static/media/roots.dcb739da.svg": "/math_dictionary/static/media/roots.dcb739da.svg",
     "static/media/sinusoid.7507a168.svg": "/math_dictionary/static/media/sinusoid.7507a168.svg",
-    "static/media/videoBtn.c965777e.svg": "/math_dictionary/static/media/videoBtn.c965777e.svg"
+    "static/media/videoBtn.7a4a3f9f.svg": "/math_dictionary/static/media/videoBtn.7a4a3f9f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8aff668c.js",
-    "static/js/2.042482f8.chunk.js",
-    "static/css/main.d3a21b1a.chunk.css",
-    "static/js/main.ebd0aa01.chunk.js"
+    "static/js/2.0901b097.chunk.js",
+    "static/css/main.b50f0389.chunk.css",
+    "static/js/main.b055b189.chunk.js"
   ]
 }
