@@ -1,8 +1,15 @@
 html, body {
-  background-color: #045801;
+  margin: 0 8px;
+  background-image: url(bakground_board.jpg);
+
+}
+
+a {
+  text-decoration: none;
+  color: #a0a0a0;
 }
 
 .page .MuiGrid-spacing-xs-3 {
-  width: 100%;
-  margin: 0;
+  width: calc(100% - 16px);
+  margin: 0px 8px;
 }

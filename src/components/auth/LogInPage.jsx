@@ -15,6 +15,8 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: 'calc(100% - 16px)',
+    margin: '8px'
   },
   paper: {
     padding: theme.spacing(2),
@@ -63,7 +65,7 @@ const SignInPage = ({ handleHomeClick }) => {
 
   return (
     <>
-      <AppBar position="static" color="inherit" >
+      <AppBar className={classes.root} position="static" color="inherit" >
         <Container maxWidth="sm">
           <Toolbar>          
             <Typography variant="h6" className={classes.title}>
@@ -98,7 +100,7 @@ const SignInPage = ({ handleHomeClick }) => {
               <Typography variant="h5" component="h2" gutterBottom>
                 Log In
               </Typography>
-              <Typography variant="caption" component="p" className={classes.pos} color="textSecondary">
+              <Typography variant="caption" component="p" color="textSecondary">
                 Log in on the internal platform
               </Typography>
             </Paper>
@@ -141,11 +143,14 @@ const SignInPage = ({ handleHomeClick }) => {
                   <FormHelperText id="my-password-text">We'll never share your password.</FormHelperText>
                 </FormControl>            
               </Paper>
+              <Paper elevation={0} className={classes.paper}>
+                  <Button color="primary" variant="contained" fullWidth>Log in</Button>
+              </Paper>
             </form>
           </CardContent>
           <CardActions>
             <Link to="/signin">
-              <Button size="small">Create new account</Button>
+              <Button style={{textTransform: 'lowercase'}} size="small">Create new account</Button>
             </Link>
           </CardActions>
         </Card>

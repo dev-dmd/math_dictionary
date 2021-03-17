@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -79,7 +79,13 @@ const rows = [
 function Dictionary() {
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
+  const [search, setSearch] = useState('');
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
       <div className={classes.root}>
@@ -90,6 +96,7 @@ function Dictionary() {
             {
               matches ? rows.slice(0,6).map(row => (
                 <CategoryButtons
+                  key={row.name}
                   name={row.name}
                   icon={row.icon}
                   srb={row.srb_name}
@@ -99,10 +106,10 @@ function Dictionary() {
               }          
               </Paper>
             </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Paper elevation={0} className={classes.paperContainer}>
               <Paper elevation={0} className={classes.paper}>
-                <DictionarySearch />
+                <DictionarySearch search={search} handleSearch={handleSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>
                 <DictionaryTable />
@@ -114,6 +121,7 @@ function Dictionary() {
             {
               matches ? rows.slice(6,12).map(row => (
                 <CategoryButtons
+                  key={row.name}
                   name={row.name}
                   icon={row.icon}
                   srb={row.srb_name}

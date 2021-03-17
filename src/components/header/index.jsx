@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,14 +7,24 @@ import Typography from '@material-ui/core/Typography';
 import SignedOutLinks from '../header/SignedOutLinks';
 import SignedInLinks from '../header/SignedInLinks';
 import video_icon from './videoBtn.svg';
-import Icon from '@material-ui/core/Icon';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
+  root: {
     '& > *': {
-      backgroundColor: 'transparent!important'
+      backgroundColor: 'transparent',
+      boxShadow: 'none'
     }
+  },
+  grow: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      flexGrow: 1,
+      display: 'block',
+    }
+  },
+  toolbar: {
+    justifyContent: 'space-evenly',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -27,15 +37,11 @@ const useStyles = makeStyles((theme) => ({
   },
   mobTitle: {
     display: 'block',
+    textAlign: 'center',
+    padding: '15px',
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
-  },
-  navBtn: {
-    color: '#f4f4f4',
-    fontSize: '14px',
-    textTransform: 'capitalize',
-    
   },
   sectionDesktop: {
     display: 'none',
@@ -51,35 +57,47 @@ const useStyles = makeStyles((theme) => ({
   },
   video_icon: {
     color: '#fff',
-    '& > .MuiIconButton-label .MuiIcon-root': {
-      width: '2.5rem',
-      height: '1.5rem'
+    [theme.breakpoints.down('md')]: {
+      padding: 0,
+    },
+    '& > .MuiIconButton-label img': {
+      display: 'flex',
+      alignItems: 'center'
     }
   }
 }));
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: theme.palette.common.white,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+  },
+}))(Tooltip);
 
 export default function PrimarySearchAppBar({ handleLoginClick, handleOpen }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>        
+    <div className={classes.root}>
+    <AppBar position="static">
+      <Typography className={classes.mobTitle} variant="h6" noWrap>
+        Math Dictionary
+      </Typography>
+      <Toolbar className={classes.toolbar}>        
           <Typography className={classes.title} variant="h6" noWrap>
             Serbian - English Mathematical Dictionary
           </Typography>
-          <Typography className={classes.mobTitle} variant="h6" noWrap>
-            Math Dictionary
-          </Typography>
-          <div className={classes.grow} />          
-          <IconButton className={classes.video_icon} onClick={handleOpen}>
-            <Icon>
-              <img height="100%" width="100%" src={video_icon}/>
-            </Icon>
-          </IconButton>
+          <div className={classes.grow} />
+          <LightTooltip title="Video tutorial">
+            <IconButton className={classes.video_icon} onClick={handleOpen}>
+              <img height="50%" width="50%" src={video_icon} alt="video tutorial" />           
+            </IconButton>
+          </LightTooltip>      
           <SignedOutLinks handleLoginClick={handleLoginClick} />
           <SignedInLinks handleLoginClick={handleLoginClick} />
-        </Toolbar>
+      </Toolbar>        
       </AppBar>   
     </div>
   );

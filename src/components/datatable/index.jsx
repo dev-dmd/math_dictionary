@@ -48,7 +48,7 @@ function Datatable({ data }) {
           <TableRow>
           {
             data.dictionary[0] && columns.slice(1,4).map((heading)=>
-            <StyledTableCell>
+            <StyledTableCell key={heading.length}>
               {heading}
             </StyledTableCell>
             )
@@ -57,12 +57,12 @@ function Datatable({ data }) {
         </TableHead>
         <TableBody>
           {data && data.dictionary.slice(0,50).map((row) => (
-            <StyledTableRow key={row.id}>
+            <StyledTableRow hover key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {row.Srpski}
               </StyledTableCell>
               <StyledTableCell>{row.English}</StyledTableCell>
-              <StyledTableCell align="right">
+              <StyledTableCell align="center">
               {
                 row.Image !== "0" ? <PhotoIcon /> : null
               }

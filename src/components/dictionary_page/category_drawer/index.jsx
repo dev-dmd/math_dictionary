@@ -36,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
     position: 'fixed',
-    backgroundColor: 'rgba(0,0,0,.2)',
+    backgroundColor: 'rgba(200,200,200,.2)',
     borderRadius: '0 15px 15px 0',
     padding: '0px 0px',
-    margin: '8px 0 0 -10px'
+    margin: '0px 0 0 -30px'
   },
   icons: {
     filter: 'invert(1)'
@@ -49,11 +49,14 @@ const useStyles = makeStyles((theme) => ({
 export default function CategoryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
+    top: false,
     left: false,
+    bottom: false,
+    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
@@ -76,8 +79,8 @@ export default function CategoryDrawer() {
           </ListItem>
         </ListSubheader>
         {[{text:'Units of Measurement', link:"units", icons: measurement}, {text:'Place value of digit', link:"digit", icons: digit}, {text:'Names of Geometric Figures and Solids', link:"figures", icons: figures}, {text:'Greek Alphabet', link:"greek", icons: greek}, {text:'Cardinal Numbers', link:"cardinal", icons: cardinal}, {text:'Names of Polygons', link:"polygons", icons: polygons}, {text:'Names of Large Numbers', link:"large-numbers", icons: large_num}, {text:'Prefixes for Units of Measurement', link:"prefixes", icons: prefixes}, {text:'Fractions', link:"fractions", icons: fractions}, {text:'Ordinal Numbers', link:"ordinal-numbers", icons: ordinal}, {text:'Exponents and Radicals (roots)', link:"roots", icons: roots}, {text:'Trigonometry', link:"trigonometry", icons: sinusoid}].map((row) => (
-          <Link to={`math_dictionary/${row.link}`}>
-            <ListItem button key={row.text}>
+          <Link to={`math_dictionary/${row.link}`} key={row.text}>
+            <ListItem button>
               <ListItemIcon>
                 <Icon>
                   <img className={classes.icons} height="100%" width="100%" src={`${row.icons}`} alt={`${row.text}`} />

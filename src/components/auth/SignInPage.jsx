@@ -15,6 +15,8 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: 'calc(100% - 16px)',
+    margin: '8px'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -62,7 +64,7 @@ const SignInPage = ({ handleHomeClick }) => {
   };
   return (
     <>
-      <AppBar position="static" color="inherit" >
+      <AppBar className={classes.root} position="static" color="inherit" >
         <Container maxWidth="sm">
           <Toolbar>          
             <Typography variant="h6" className={classes.title}>
@@ -97,11 +99,23 @@ const SignInPage = ({ handleHomeClick }) => {
               <Typography variant="h5" component="h2" gutterBottom>
                 Sing In
               </Typography>
-              <Typography variant="caption" component="p" className={classes.pos} color="textSecondary">
+              <Typography variant="caption" component="p" color="textSecondary">
                 Sign up on the internal platform
               </Typography>
             </Paper>
             <form className={classes.textFields} noValidate autoComplete="off">
+              <Paper elevation={0} className={classes.paper}>
+                <FormControl variant="outlined">
+                  <TextField
+                    id="outlined-name-input"
+                    label="Your Name"
+                    type="text"
+                    autoComplete="current-name"
+                    variant="outlined"
+                  />     
+                  <FormHelperText id="my-name-text">We'll never share your name.</FormHelperText>        
+                </FormControl>      
+              </Paper>   
               <Paper elevation={0} className={classes.paper}>
                 <FormControl variant="outlined">
                   <TextField
@@ -140,11 +154,14 @@ const SignInPage = ({ handleHomeClick }) => {
                   <FormHelperText id="my-password-text">We'll never share your password.</FormHelperText>
                 </FormControl>            
               </Paper>
+              <Paper elevation={0} className={classes.paper}>
+                  <Button color="primary" variant="contained" fullWidth>Sign in</Button>
+              </Paper>
             </form>
           </CardContent>
           <CardActions>
             <Link to="/login">
-              <Button size="small">Having an account</Button>
+              <Button style={{textTransform: 'lowercase'}} size="small">Having an account</Button>
             </Link>
           </CardActions>
         </Card>

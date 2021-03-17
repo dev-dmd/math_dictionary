@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: theme.palette.primary.contrastText,
+    backgroundColor: 'transparent'
   },
 }));
 
@@ -24,7 +25,7 @@ function Index() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>
+          <Paper elevation={0} className={classes.paper}>
             Math Dictionary &copy; 2021 - {getCurrentYear()}
           </Paper>
         </Grid>
