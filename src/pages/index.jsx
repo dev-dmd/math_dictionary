@@ -18,10 +18,10 @@ function Pages() {
           <Route exact path="/math_dictionary/">
             <Dictionary />
           </Route>
-          <Route path="/math_dictionary/digit">
+          <Route exact path="/math_dictionary/digit">
             <Digit />
           </Route>
-          <Route path="/math_dictionary/greek">
+          <Route exact path="/math_dictionary/greek">
             <Greek />
           </Route>
         </Switch>

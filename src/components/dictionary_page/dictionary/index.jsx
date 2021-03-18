@@ -4,7 +4,6 @@ import { useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CategoryButtons from '../category_buttons';
-import DictionaryTable from '../dictionary_table';
 import DictionarySearch from '../dictionary_search';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 // Button Icons
@@ -21,9 +20,9 @@ import ordinal_nums_icon from '../category_icons/ordinal.svg';
 import roots_icon from '../category_icons/roots.svg';
 import trigonometry_icon from '../category_icons/sinusoid.svg';
 // Button Icons
-import category_data from '../category_data/category.json';
 import CategoryDrawer from '../category_drawer';
-console.log(category_data);
+import DataTable from '../../datatable_dictionary';
+import data from './dictionary.json';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,29 +62,33 @@ function createButtons(name, icon, srb_name, eng_name) {
 
 const rows = [
   createButtons('measurement', measurement_icon, 'merne jedinice', 'units of measurement'),
-  createButtons('digit', digit_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('figures', figure_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('greek', greek_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('cardinal', cardinal_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('polygons', polygons_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('large-nums', large_nums_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('prefixes', prefixes_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('fraction', fraction_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('ordinal-num', ordinal_nums_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('roots', roots_icon, 'place value of digit', 'mesna vrednost cifre'),
-  createButtons('trigonometry', trigonometry_icon, 'place value of digit', 'mesna vrednost cifre'),
+  createButtons('digit', digit_icon, 'mesna vrednost cifre', 'place value of digit'),
+  createButtons('figures', figure_icon, 'nazivi geometrijskih figura i tela ', 'names of geometric figures and solids'),
+  createButtons('greek', greek_icon, 'grčki alfabet', 'greek alphabet'),
+  createButtons('cardinal', cardinal_icon, 'kardinalni brojevi', 'cardinal numbers'),
+  createButtons('polygons', polygons_icon, 'nazivi mnogouglova', ' names of polygons'),
+  createButtons('large-nums', large_nums_icon, 'nazivi velikih brojeva', 'names of large numbers'),
+  createButtons('prefixes', prefixes_icon, 'prefiksi mernih jedinica', 'prefixes for units of measurement'),
+  createButtons('fraction', fraction_icon, 'razlomci', 'fractions'),
+  createButtons('ordinal-num', ordinal_nums_icon, 'redni brojevi', 'ordinal numbers'),
+  createButtons('roots', roots_icon, 'stepenovanje i korenovanje', 'exponents and radicals (roots)'),
+  createButtons('trigonometry', trigonometry_icon, 'trigonometrija ', 'trigonometry'),
 ];
 
 function Dictionary() {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
-
   const [search, setSearch] = useState('');
+  let dictionary = data.dictionary;
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
+
+  function searchTable(rows) {
+    return rows.filter((row) => row.Srpski.toLowerCase().indexOf(search) > -1 || row.English.toLowerCase().indexOf(search) > -1);
+  }
 
   return (
       <div className={classes.root}>
@@ -112,7 +115,7 @@ function Dictionary() {
                 <DictionarySearch search={search} handleSearch={handleSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>
-                <DictionaryTable />
+                <DataTable data={search === '' ? dictionary = [] : searchTable(dictionary)} />
               </Paper>
             </Paper>
           </Grid>

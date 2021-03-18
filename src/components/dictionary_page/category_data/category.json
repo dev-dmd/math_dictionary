@@ -4,103 +4,103 @@
         "digits": [
             {
                 "id": "1",
-                "Srpski | Mesna vrednost": "Milijarde",
-                "English | Place value": "Bilions"
+                " Mesna vrednost": "Milijarde",
+                " Place value": "Bilions"
             },
             {
                 "id": "2",
-                "Srpski | Mesna vrednost": "Stotine miliona",
-                "English | Place value": "Hundred-milions"
+                " Mesna vrednost": "Stotine miliona",
+                " Place value": "Hundred-milions"
             },
             {
                 "id": "3",
-                "Srpski | Mesna vrednost": "Desetice miliona",
-                "English | Place value": "Ten-milions"
+                " Mesna vrednost": "Desetice miliona",
+                " Place value": "Ten-milions"
             },
             {
                 "id": "4",
-                "Srpski | Mesna vrednost": "Milioni",
-                "English | Place value": "Milions"
+                " Mesna vrednost": "Milioni",
+                " Place value": "Milions"
             },
             {
                 "id": "5",
-                "Srpski | Mesna vrednost": "Stotine hiljada",
-                "English | Place value": "Hundred-thousands"
+                " Mesna vrednost": "Stotine hiljada",
+                " Place value": "Hundred-thousands"
             },
             {
                 "id": "6",
-                "Srpski | Mesna vrednost": "Desetice hiljada",
-                "English | Place value": "Ten-thousands"
+                " Mesna vrednost": "Desetice hiljada",
+                " Place value": "Ten-thousands"
             },
             {
                 "id": "7",
-                "Srpski | Mesna vrednost": "Hiljade",
-                "English | Place value": "Thousands"
+                " Mesna vrednost": "Hiljade",
+                " Place value": "Thousands"
             },
             {
                 "id": "8",
-                "Srpski | Mesna vrednost": "Stotine",
-                "English | Place value": "Hundreds"
+                " Mesna vrednost": "Stotine",
+                " Place value": "Hundreds"
             },
             {
                 "id": "9",
-                "Srpski | Mesna vrednost": "Desetice",
-                "English | Place value": "Tens"
+                " Mesna vrednost": "Desetice",
+                " Place value": "Tens"
             },
             {
                 "id": "10",
-                "Srpski | Mesna vrednost": "Jedinice",
-                "English | Place value": "Ones"
+                " Mesna vrednost": "Jedinice",
+                " Place value": "Ones"
             },
             {
                 "id": "11",
-                "Srpski | Mesna vrednost": "Decimalni zarez (tačka)",
-                "English | Place value": "Decimal point"
+                " Mesna vrednost": "Decimalni zarez (tačka)",
+                " Place value": "Decimal point"
             },
             {
                 "id": "12",
-                "Srpski | Mesna vrednost": "Desetih",
-                "English | Place value": "Tenths"
+                " Mesna vrednost": "Desetih",
+                " Place value": "Tenths"
             },
             {
                 "id": "13",
-                "Srpski | Mesna vrednost": "Stotih",
-                "English | Place value": "Hundresths"
+                " Mesna vrednost": "Stotih",
+                " Place value": "Hundresths"
             },
             {
                 "id": "14",
-                "Srpski | Mesna vrednost": "Hiljaditih",
-                "English | Place value": "Thousandths"
+                " Mesna vrednost": "Hiljaditih",
+                " Place value": "Thousandths"
             },
             {
                 "id": "15",
-                "Srpski | Mesna vrednost": "Desetohiljaditih",
-                "English | Place value": "Teh-thousandths"
+                " Mesna vrednost": "Desetohiljaditih",
+                " Place value": "Teh-thousandths"
             },
             {
                 "id": "16",
-                "Srpski | Mesna vrednost": "Stohiljaditih",
-                "English | Place value": "Hundred-thousandths"
+                " Mesna vrednost": "Stohiljaditih",
+                " Place value": "Hundred-thousandths"
             },
             {
                 "id": "17",
-                "Srpski | Mesna vrednost": "Milionitih",
-                "English | Place value": "Milionths"
+                " Mesna vrednost": "Milionitih",
+                " Place value": "Milionths"
             },
             {
                 "id": "18",
-                "Srpski | Mesna vrednost": "Desetomilionitih",
-                "English | Place value": "Ten-milionths"
+                "Mesna vrednost": "Desetomilionitih",
+                "Place value": "Ten-milionths"
             },
             {
                 "id": "19",
-                "Srpski | Mesna vrednost": "Stomilionitih",
-                "English | Place value": "Hundred-milionths"
+                "Mesna vrednost": "Stomilionitih",
+                "Place value": "Hundred-milionths"
             },
             {
                 "id": "20",
-                "Srpski | Mesna vrednost": "Milijarditih",
-                "English | Place value": "Bilionths"
+                "Mesna vrednost": "Milijarditih",
+                "Place value": "Bilionths"
             }
         ],
         "example": [
@@ -108,36 +108,36 @@
                 "id": "1",
                 "num": "4,567.94",
                 "Srpski": "4 hiljade 5 stotina 6 desetica 7 jedinica 9 desetih 3 stotih 8 hiljaditih 6 desetohiljaditih",
-                "English": "0"
+                "English": 0
             },
             {
                 "id": "2",
                 "num": "4,567,9386",
-                "Srpski": "0",
+                "Srpski": 0,
                 "English": "4 thousands 5 hundreds 6 tens 7 ones 9 tenths 3 hundredths 8 thousandths 6 ten-thousandths"
             },
             {
                 "id": "3",
                 "num": "4567.9386",
                 "Srpski": "četiri hiljade petsto šesdeset sedam i devet hiljada trista osamdeset šest desetohiljaditih četiri hiljade petsto šesdeset sedam zarez devet tri osam šest",
-                "English": "0"
+                "English": 0
             },
             {
                 "id": "4",
                 "num": "45,679,386",
-                "Srpski": "0",
+                "Srpski": 0,
                 "English": "four thousand five hundred sixty-seven point /and nine thousand three hundred eighty-six ten-thousandths four thousand five hundred sixty-seven point nine three eight six"
             },
             {
                 "id": "5",
                 "num": "0.5866",
                 "Srpski": "nula zarez pet osam šest šest",
-                "English": "0"
+                "English": 0
             },
             {
                 "id": "6",
                 "num": "0.5866 ",
-                "Srpski": "0",
+                "Srpski": 0,
                 "English": "point five eight six six (ne čitamo nulu / we don’t read zero)"
             }
         ]
@@ -146,147 +146,147 @@
         "greek": [
             {
                 "id": "1",
-                "symbols": "A",
+                "Symbols": "A\\alpha",
                 "Srpski": "Alfa",
-                "Englesh": "Alpha"
+                "English": "Alpha"
             },
             {
                 "id": "2",
-                "symbols": "B",
+                "Symbols": "B\\beta",
                 "Srpski": "Beta",
-                "Englesh": "Beta"
+                "English": "Beta"
             },
             {
                 "id": "3",
-                "symbols": "G",
+                "Symbols": "\\Gamma\\gamma",
                 "Srpski": "Gama",
-                "Englesh": "Gamma"
+                "English": "Gamma"
             },
             {
                 "id": "4",
-                "symbols": "D",
+                "Symbols": "\\Delta\\delta",
                 "Srpski": "Delta",
-                "Englesh": "Delta"
+                "English": "Delta"
             },
             {
                 "id": "5",
-                "symbols": "E",
+                "Symbols": "E\\epsilon",
                 "Srpski": "Epsilon",
-                "Englesh": "Epsilon"
+                "English": "Epsilon"
             },
             {
                 "id": "6",
-                "symbols": "Z",
+                "Symbols": "Z\\zeta",
                 "Srpski": "Zeta",
-                "Englesh": "Zeta"
+                "English": "Zeta"
             },
             {
                 "id": "7",
-                "symbols": "E",
+                "Symbols": "H\\eta",
                 "Srpski": "Eta",
-                "Englesh": "Eta"
+                "English": "Eta"
             },
             {
                 "id": "8",
-                "symbols": "T",
+                "Symbols": "\\Theta\\theta",
                 "Srpski": "Teta",
-                "Englesh": "Theta"
+                "English": "Theta"
             },
             {
                 "id": "9",
-                "symbols": "I",
+                "Symbols": "I\\iota",
                 "Srpski": "Iota",
-                "Englesh": "Iota"
+                "English": "Iota"
             },
             {
                 "id": "10",
-                "symbols": "K",
+                "Symbols": "K\\kappa",
                 "Srpski": "Kapa",
-                "Englesh": "Kappa"
+                "English": "Kappa"
             },
             {
                 "id": "11",
-                "symbols": "L",
+                "Symbols": "\\Lambda\\lambda",
                 "Srpski": "Lambda",
-                "Englesh": "Lambda"
+                "English": "Lambda"
             },
             {
                 "id": "12",
-                "symbols": "M",
+                "Symbols": "M\\mu",
                 "Srpski": "Mi",
-                "Englesh": "Mu"
+                "English": "Mu"
             },
             {
                 "id": "13",
-                "symbols": "N",
+                "Symbols": "N\\nu",
                 "Srpski": "Ni",
-                "Englesh": "Nu"
+                "English": "Nu"
             },
             {
                 "id": "14",
-                "symbols": "K",
+                "Symbols": "\\Xi\\xi",
                 "Srpski": "Ksi",
-                "Englesh": "Xi"
+                "English": "Xi"
             },
             {
                 "id": "15",
-                "symbols": "O",
+                "Symbols": "O\\omicron",
                 "Srpski": "Omikron",
-                "Englesh": "Omicron"
+                "English": "Omicron"
             },
             {
                 "id": "16",
-                "symbols": "P",
+                "Symbols": "\\Pi\\pi",
                 "Srpski": "Pi",
-                "Englesh": "Pi"
+                "English": "Pi"
             },
             {
                 "id": "17",
-                "symbols": "R",
+                "Symbols": "R\\rho",
                 "Srpski": "Ro",
-                "Englesh": "Rho"
+                "English": "Rho"
             },
             {
                 "id": "18",
-                "symbols": "S",
+                "Symbols": "\\Sigma\\sigma",
                 "Srpski": "Sigma",
-                "Englesh": "Sigma"
+                "English": "Sigma"
             },
             {
                 "id": "19",
-                "symbols": "T",
+                "Symbols": "T\\tau",
                 "Srpski": "Tau",
-                "Englesh": "Tau"
+                "English": "Tau"
             },
             {
                 "id": "20",
-                "symbols": "I",
+                "Symbols": "\\Upsilon\\upsilon",
                 "Srpski": "Ipsilon",
-                "Englesh": "Upsilon"
+                "English": "Upsilon"
             },
             {
                 "id": "21",
-                "symbols": "F",
+                "Symbols": "\\Phi\\phi",
                 "Srpski": "Fi",
-                "Englesh": "Phi "
+                "English": "Phi "
             },
             {
                 "id": "22",
-                "symbols": "H",
+                "Symbols": "X\\chi",
                 "Srpski": "Hi",
-                "Englesh": "Chi"
+                "English": "Chi"
             },
             {
                 "id": "23",
-                "symbols": "P",
+                "Symbols": "\\Psi\\psi",
                 "Srpski": "Psi",
-                "Englesh": "Psi"
+                "English": "Psi"
             },
             {
                 "id": "24",
-                "symbols": "O",
+                "Symbols": "\\Omega\\omega",
                 "Srpski": "Omega",
-                "Englesh": "Omega"
+                "English": "Omega"
             }
         ]
       },

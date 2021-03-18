@@ -7,13 +7,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import PhotoIcon from '@material-ui/icons/Photo';
+import { MathComponent } from 'mathjax-react';
 
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black,
   },
   body: {
     fontSize: 14,
@@ -35,11 +35,16 @@ const useStyles = makeStyles({
   container: {
     maxHeight: 650,
   },
+  math: {
+    '& > *': {
+      width: '10%!important'
+    }
+  }
 });
 
 function Datatable({ data }) {
   const classes = useStyles();
-  const columns = data.dictionary[0] && Object.keys(data.dictionary[0]);
+  const columns = data[0] && Object.keys(data[0]);
   console.log(columns.slice(1,4));
   return (
     <TableContainer className={classes.container} component={Paper}>
@@ -47,7 +52,7 @@ function Datatable({ data }) {
         <TableHead>
           <TableRow>
           {
-            data.dictionary[0] && columns.slice(1,4).map((heading)=>
+            data[0] && columns.slice(1,4).map((heading)=>
             <StyledTableCell key={heading.length}>
               {heading}
             </StyledTableCell>
@@ -56,16 +61,16 @@ function Datatable({ data }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data && data.dictionary.slice(0,50).map((row) => (
+          {data && data.map((row) => (
             <StyledTableRow hover key={row.id}>
+              <StyledTableCell className={classes.math} component="th" scope="row">
+                <MathComponent tex={String.raw`${row.Symbols}`} />
+              </StyledTableCell>
               <StyledTableCell component="th" scope="row">
                 {row.Srpski}
               </StyledTableCell>
-              <StyledTableCell>{row.English}</StyledTableCell>
-              <StyledTableCell align="center">
-              {
-                row.Image !== "0" ? <PhotoIcon /> : null
-              }
+              <StyledTableCell>
+                {row.English}
               </StyledTableCell>
             </StyledTableRow>
           ))}

@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     border: '3px solid #fff',
     backgroundColor: 'transparent',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',   
+    '&:hover': {
+      boxShadow: '0 0 30px #a2fdec',
+    }
   },
   media: {
     width: '70%',
