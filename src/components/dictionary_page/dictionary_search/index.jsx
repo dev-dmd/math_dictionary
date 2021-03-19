@@ -12,10 +12,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
+    opacity: '.7'
   },
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
+    padding: '5px'
   },
   iconButton: {
     padding: 10,

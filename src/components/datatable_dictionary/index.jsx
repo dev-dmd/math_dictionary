@@ -9,11 +9,11 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import PhotoIcon from '@material-ui/icons/Photo';
 
-
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.black,
+    fontFamily: 'Crayon sans-serif'
   },
   body: {
     fontSize: 14,
@@ -34,10 +34,20 @@ const useStyles = makeStyles({
   },
   container: {
     height: 650,
+    opacity: '.7'
   },
+  empty: {
+    position: 'absolute',
+    top: '30%',
+    left: '50%',
+    transform: 'translate(-50%, 50%)',
+    color: 'lightgrey',
+    fontSize: '24px',
+    fontWeight: '600',
+  }
 });
 
-function Datatable({ data }) {
+function Datatable({ data, search }) {
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
   return (
@@ -55,7 +65,8 @@ function Datatable({ data }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data && data.slice(0,100).map((row) => (
+        
+          {search === '' ? <TableBody className={classes.empty}>{data = ['data not found']}</TableBody> : data && data.slice(0,100).map((row) => (
             <StyledTableRow hover key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {row.Srpski}

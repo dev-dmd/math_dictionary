@@ -93,7 +93,7 @@ function Dictionary() {
   return (
       <div className={classes.root}>
         <Grid container spacing={3}>
-        <CategoryDrawer />
+          <CategoryDrawer />
           <Grid className={classes.btns_container} item xs>
             <Paper elevation={0} className={classes.btns}>  
             {
@@ -115,7 +115,7 @@ function Dictionary() {
                 <DictionarySearch search={search} handleSearch={handleSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>
-                <DataTable data={search === '' ? dictionary = [] : searchTable(dictionary)} />
+                <DataTable search={search} data={searchTable(dictionary)} />
               </Paper>
             </Paper>
           </Grid>

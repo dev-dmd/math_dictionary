@@ -10,6 +10,12 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    opacity: '.7'
+  },
+  paper: {
+    padding: theme.spacing(2),
+    color: theme.palette.text.secondary,
+    backgroundColor: 'transparent'
   },
   menuButton: {
     marginRight: theme.spacing(2),

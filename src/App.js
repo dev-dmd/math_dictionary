@@ -5,44 +5,33 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import SignInPage from './components/auth/SignInPage';
-import LogInPage from './components/auth/LogInPage';
-import Pages from './pages';
+import Footer from './components/footer';
+import Dictionary from './components/dictionary_page/dictionary';
+import Digit from './components/category_pages/Digit';
+import Greek from './components/category_pages/Greek';
 import Header from './components/header';
-import Dashboard from './components/dashboard';
-import VideoModal from './components/video_modal';
 
 function App() {
-  // Video Modal
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route exact path="/">
-          <Header handleOpen={handleOpen} />
-          <Pages />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-        <Route path="/signin">
-          <SignInPage />
-        </Route>
-        <Route path="/login">
-          <LogInPage />
-        </Route>
-      </Switch>
-      <VideoModal onClose={handleClose} open={open} />
-    </Router>
+    <>
+      <div component="main" className="page">      
+        <Header />
+        <Router>
+          <Switch>
+            <Route exact path="/math_dictionary/">
+              <Dictionary />
+            </Route>
+            <Route exact strict path="/math_dictionary/digit">
+              <Digit />
+            </Route>
+            <Route exact strict path="/math_dictionary/greek">
+              <Greek />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    </>
   )
 }
 

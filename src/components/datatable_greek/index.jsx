@@ -45,7 +45,7 @@ const useStyles = makeStyles({
 function Datatable({ data }) {
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
-  console.log(columns.slice(1,4));
+
   return (
     <TableContainer className={classes.container} component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="customized table">

@@ -12,6 +12,7 @@ import data from '../dictionary_page/category_data/category.json';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    opacity: '.7'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -21,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'left',
     color: theme.palette.text.secondary,
+  },
+  paperWraper: {
+    padding: theme.spacing(2),
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
+    backgroundColor: 'transparent'
   },
   title: {
     color: theme.palette.primary.contrastText,
@@ -44,43 +51,45 @@ const Digit = () => {
   return (
     <div>
       <Toolbar className={classes.toolbar}>
-      <Grid items xs={3}>
-        <Link exact to="/math_dictionary">
-          <Button
-            variant="outline"
-            className={classes.menuButton}
-            startIcon={<KeyboardReturnIcon />}
-          >
-            go back
-          </Button>          
-        </Link>
-      </Grid>
-      <Grid items xs={6}>
-        <Typography className={classes.title}  variant="h4" component="h2">
-          Place value of Digits
-        </Typography>
-      </Grid>
-      <Grid items xs={3}>
-        {/*Empty block */}
-      </Grid>
+        <Grid items xs={3}>
+          <Link exact to="/math_dictionary">
+            <Button
+              variant="outline"
+              className={classes.menuButton}
+              startIcon={<KeyboardReturnIcon />}
+            >
+              go back
+            </Button>          
+          </Link>
+        </Grid>
+        <Grid items xs={6}>
+          <Typography className={classes.title}  variant="h4" component="h2">
+            Place value of Digits
+          </Typography>
+        </Grid>
+        <Grid items xs={3}>
+          {/*Empty block */}
+        </Grid>
       </Toolbar>
       {/* Category Content */}
       <div className={classes.root}>
        <Container maxWidth="xl">
-        <Grid container spacing={3}>
-          <Grid className={classes.example} item xs={6}>            
-              <Card>
-                <CardContent>
-                  <DatatabelExample data={data.category[0].example}/>
-                </CardContent>
-              </Card>
+        <Paper elevation={0} className={classes.paperWraper}>
+          <Grid container spacing={3}>
+            <Grid className={classes.example} item xs={6}>            
+                <Card>
+                  <CardContent>
+                    <DatatabelExample data={data.category[0].example}/>
+                  </CardContent>
+                </Card>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>
+                <DatatableDigit data={data.category[0].digits}/>
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>
-              <DatatableDigit data={data.category[0].digits}/>
-            </Paper>
-          </Grid>
-        </Grid>
+        </Paper>
        </Container>
       </div>
     </div>
