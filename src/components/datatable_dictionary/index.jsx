@@ -48,6 +48,7 @@ const useStyles = makeStyles({
 });
 
 function Datatable({ data, search }) {
+  console.log(data.length === 0);
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
   return (
@@ -66,7 +67,7 @@ function Datatable({ data, search }) {
         </TableHead>
         <TableBody>
         
-          {search === '' ? <TableBody className={classes.empty}>{data = ['data not found']}</TableBody> : data && data.slice(0,100).map((row) => (
+          {search === '' || data.length === 0 ? <TableBody className={classes.empty}>{ data = ['result not found'] }</TableBody> : data && data.slice(0,100).map((row) => (
             <StyledTableRow hover key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {row.Srpski}
