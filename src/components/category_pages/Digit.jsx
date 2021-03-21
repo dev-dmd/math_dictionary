@@ -8,11 +8,16 @@ import {
 import DatatableDigit from '../datatable_digit';
 import DatatabelExample from '../datatable_examples';
 import data from '../dictionary_page/category_data/category.json';
+import Header from '../header';
+import Footer from '../footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    opacity: '.7'
+    opacity: '.9'
+  },
+  page: {
+    backgroundColor: '#262626'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -49,10 +54,11 @@ const useStyles = makeStyles((theme) => ({
 const Digit = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.page}>
+      <Header />
       <Toolbar className={classes.toolbar}>
         <Grid items xs={3}>
-          <Link exact to="/math_dictionary">
+          <Link exact to="/">
             <Button
               variant="outline"
               className={classes.menuButton}
@@ -92,6 +98,7 @@ const Digit = () => {
         </Paper>
        </Container>
       </div>
+      <Footer />
     </div>
   )
 }

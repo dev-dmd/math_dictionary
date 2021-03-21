@@ -22,7 +22,10 @@ import trigonometry_icon from '../category_icons/sinusoid.svg';
 // Button Icons
 import CategoryDrawer from '../category_drawer';
 import DataTable from '../../datatable_dictionary';
-import data from './dictionary.json';
+import data from '../dictionary_data/dictionary.json';
+import { Link, Route } from 'react-router-dom';
+import Digit from '../../category_pages/Digit';
+import Greek from '../../category_pages/Greek';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,7 +78,7 @@ const rows = [
   createButtons('trigonometry', trigonometry_icon, 'trigonometrija ', 'trigonometry'),
 ];
 
-function Dictionary() {
+function Dictionary({ match }) {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
@@ -98,6 +101,7 @@ function Dictionary() {
             <Paper elevation={0} className={classes.btns}>  
             {
               matches ? rows.slice(0,6).map(row => (
+              <Link to={`${match.url}${row.name}`}>      
                 <CategoryButtons
                   key={row.name}
                   name={row.name}
@@ -105,7 +109,8 @@ function Dictionary() {
                   srb={row.srb_name}
                   eng={row.eng_name}
                 />
-                )) : null
+              </Link> 
+              )) : null
               }          
               </Paper>
             </Grid>
@@ -123,6 +128,7 @@ function Dictionary() {
             <Paper elevation={0} className={classes.btns}>  
             {
               matches ? rows.slice(6,12).map(row => (
+              <Link to={`${match.url}${row.name}`}>
                 <CategoryButtons
                   key={row.name}
                   name={row.name}
@@ -130,11 +136,14 @@ function Dictionary() {
                   srb={row.srb_name}
                   eng={row.eng_name}
                 />
+              </Link> 
                 )) : null
               }          
               </Paper>
             </Grid>
         </Grid>
+        <Route path={`${match.url}digit`} component={Digit} />
+        <Route path={`${match.url}greek`} component={Greek} /> 
       </div>
   )
 }

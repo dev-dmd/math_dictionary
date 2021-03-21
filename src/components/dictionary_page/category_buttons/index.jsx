@@ -6,9 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import {
-  Link
-} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   media: {
     width: '70%',
     height: 100,
-    backgroundSize: 'contain'
+    backgroundSize: 'contain',
+    opacity: '0.8'
   },
   content: {
     display: 'flex',
@@ -49,10 +47,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function CategoryButtons({ name, icon, srb, eng }) {
+function CategoryButtons({ name, icon, srb, eng, match }) {
   const classes = useStyles();
   return (     
-    <Link to={`/math_dictionary/${name}`}>      
+    
         <Card className={classes.root}>
           <CardActionArea className={classes.btn}>
           <CardMedia
@@ -70,8 +68,7 @@ function CategoryButtons({ name, icon, srb, eng }) {
             </Typography>
           </CardContent>
           </CardActionArea>
-        </Card>     
-    </Link>     
+        </Card>    
   )
 }
 

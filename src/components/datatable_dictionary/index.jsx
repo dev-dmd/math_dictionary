@@ -12,8 +12,9 @@ import PhotoIcon from '@material-ui/icons/Photo';
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.black,
-    fontFamily: 'Crayon sans-serif'
+    color: theme.palette.text.disabled,
+    // fontFamily: 'Crayon sans-serif'
+    fontWeight: theme.typography.fontWeightBold
   },
   body: {
     fontSize: 14,
@@ -28,27 +29,26 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 300,
   },
   container: {
     height: 650,
-    opacity: '.7'
+    opacity: '.8'
   },
   empty: {
     position: 'absolute',
     top: '30%',
     left: '50%',
     transform: 'translate(-50%, 50%)',
-    color: 'lightgrey',
+    color: theme.palette.grey[300],
     fontSize: '24px',
     fontWeight: '600',
   }
-});
+}));
 
 function Datatable({ data, search }) {
-  console.log(data.length === 0);
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
   return (

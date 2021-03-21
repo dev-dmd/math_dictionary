@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    opacity: '.7'
+    opacity: '.8'
   },
   input: {
     marginLeft: theme.spacing(1),

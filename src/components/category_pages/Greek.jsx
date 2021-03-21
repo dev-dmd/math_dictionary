@@ -7,10 +7,17 @@ import data from '../dictionary_page/category_data/category.json';
 import {
   Link
 } from "react-router-dom";
+import Header from '../header';
+import Footer from '../footer';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    opacity: '.7'
+    opacity: '.9'
+  },
+  page: {
+    backgroundColor: '#262626',
+    minHeight: '100vh'
   },
   paper: {
     padding: theme.spacing(2),
@@ -30,10 +37,11 @@ const useStyles = makeStyles((theme) => ({
 const Greek = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.page}>
+      <Header />
       <Toolbar>
         <Grid items xs={3}>
-          <Link exact to="/math_dictionary">
+          <Link exact to="/">
               <Button
                 variant="outline"
                 color=""
@@ -64,6 +72,7 @@ const Greek = () => {
         </Grid>
        </Container>
       </div>
+      <Footer />
     </div>
   )
 }
