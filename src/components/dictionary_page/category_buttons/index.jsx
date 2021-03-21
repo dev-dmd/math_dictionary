@@ -49,26 +49,25 @@ const useStyles = makeStyles((theme) => ({
 
 function CategoryButtons({ name, icon, srb, eng, match }) {
   const classes = useStyles();
-  return (     
-    
-        <Card className={classes.root}>
-          <CardActionArea className={classes.btn}>
-          <CardMedia
-            className={classes.media}
-            image={icon}
-            title={name}
-          />
-          <CardContent className={classes.content}>
-            <Typography gutterBottom variant="caption">
-              {srb}
-            </Typography>
-            <Divider variant="middle" style={{backgroundColor: '#a3a3a3'}} />
-            <Typography variant="caption">
-              {eng}
-            </Typography>
-          </CardContent>
-          </CardActionArea>
-        </Card>    
+  return (  
+    <Card className={classes.root}>
+      <CardActionArea className={classes.btn}>
+      <CardMedia
+        className={classes.media}
+        image={icon}
+        title={name}
+      />
+      <CardContent className={classes.content}>
+        <Typography gutterBottom variant="caption">
+          {srb}
+        </Typography>
+        <Divider variant="middle" style={{backgroundColor: '#a3a3a3'}} />
+        <Typography variant="caption">
+          {eng}
+        </Typography>
+      </CardContent>
+      </CardActionArea>
+    </Card>    
   )
 }
 

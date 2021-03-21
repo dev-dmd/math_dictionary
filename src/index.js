@@ -24,7 +24,4 @@ const MathDictionary = () => (
     </Router>
 );
 
-render(
-  <MathDictionary />,  
-  document.getElementById('root')
-);
+render(<MathDictionary />, document.getElementById('root'));

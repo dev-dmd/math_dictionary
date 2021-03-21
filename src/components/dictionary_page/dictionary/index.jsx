@@ -142,8 +142,8 @@ function Dictionary({ match }) {
               </Paper>
             </Grid>
         </Grid>
-        <Route path={`${match.url}digit`} component={Digit} />
-        <Route path={`${match.url}greek`} component={Greek} /> 
+        <Route exact path={`${match.url}digit`} component={Digit} />
+        <Route exact path={`${match.url}greek`} component={Greek} /> 
       </div>
   )
 }

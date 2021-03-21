@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Digit = () => {
+function Digit() {
   const classes = useStyles();
   return (
     <div className={classes.page}>

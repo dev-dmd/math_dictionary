@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Greek = () => {
+function Greek() {
   const classes = useStyles();
   return (
     <div className={classes.page}>
