@@ -23,9 +23,7 @@ import trigonometry_icon from '../category_icons/sinusoid.svg';
 import CategoryDrawer from '../category_drawer';
 import DataTable from '../../datatable_dictionary';
 import data from '../dictionary_data/dictionary.json';
-import { Link, Route } from 'react-router-dom';
-import Digit from '../../category_pages/Digit';
-import Greek from '../../category_pages/Greek';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,7 +66,7 @@ const rows = [
   createButtons('digit', digit_icon, 'mesna vrednost cifre', 'place value of digit'),
   createButtons('figures', figure_icon, 'nazivi geometrijskih figura i tela ', 'names of geometric figures and solids'),
   createButtons('greek', greek_icon, 'grčki alfabet', 'greek alphabet'),
-  createButtons('cardinal', cardinal_icon, 'kardinalni brojevi', 'cardinal numbers'),
+  createButtons('cardinals', cardinal_icon, 'kardinalni brojevi', 'cardinal numbers'),
   createButtons('polygons', polygons_icon, 'nazivi mnogouglova', ' names of polygons'),
   createButtons('large-nums', large_nums_icon, 'nazivi velikih brojeva', 'names of large numbers'),
   createButtons('prefixes', prefixes_icon, 'prefiksi mernih jedinica', 'prefixes for units of measurement'),
@@ -137,13 +135,11 @@ function Dictionary({ match }) {
                   eng={row.eng_name}
                 />
               </Link> 
-                )) : null
+              )) : null
               }          
               </Paper>
             </Grid>
-        </Grid>
-        <Route exact path={`${match.url}digit`} component={Digit} />
-        <Route exact path={`${match.url}greek`} component={Greek} /> 
+        </Grid>        
       </div>
   )
 }

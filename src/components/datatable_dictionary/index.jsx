@@ -86,4 +86,4 @@ function Datatable({ data, search }) {
   )
 }
 
-export default Datatable
+export default Datatable;

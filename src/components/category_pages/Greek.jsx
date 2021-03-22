@@ -38,7 +38,7 @@ function Greek() {
   const classes = useStyles();
   return (
     <div className={classes.page}>
-      <Header />
+    <Header />
       <Toolbar>
         <Grid items xs={3}>
           <Link exact to="/">
@@ -65,7 +65,7 @@ function Greek() {
        <Container maxWidth="md">
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Paper className={classes.paper}>
+            <Paper elevation={0} className={classes.paper}>
               <Datatable data={data.category[1].greek}/>
             </Paper>
           </Grid>

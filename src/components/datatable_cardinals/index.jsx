@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     minWidth: 300,
   },
   container: {
-    maxHeight: 650,
+    maxHeight: 800,
   },
   topHead: {
     display: 'flex',
@@ -49,22 +49,12 @@ function Datatable({ data }) {
   return (
     <TableContainer component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="customized table">
-      <TableHead>
-          <TableRow>          
-            <StyledTableCell className={classes.topHead} >
-              <Typography>Srpski</Typography>
-              <Typography>English</Typography>
-            </StyledTableCell>      
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <StyledTableRow>
             <TableContainer className={classes.container} >
               <Table stickyHeader className={classes.table}>
                 <TableHead>
                   <TableRow>
                   {
-                    data[0] && columns.slice(1,3).map((heading)=>
+                    data[0] && columns.slice(1,5).map((heading)=>
                     <StyledTableCell align="center" key={heading.length}>
                       {heading}
                     </StyledTableCell>
@@ -80,15 +70,19 @@ function Datatable({ data }) {
                         </StyledTableCell>
                         <StyledTableCell align="center" component="th" scope="row">
                           {Object.values(row)[2]}
-                        </StyledTableCell>              
+                        </StyledTableCell>
+                        <StyledTableCell align="center" component="th" scope="row">
+                          {Object.values(row)[3]}
+                        </StyledTableCell>  
+                        <StyledTableCell align="center" component="th" scope="row">
+                          {Object.values(row)[4]}
+                        </StyledTableCell>                 
                       </StyledTableRow>
                     
                   ))}
                 </TableBody>
               </Table>
             </TableContainer>
-          </StyledTableRow>
-        </TableBody>
       </Table>
     </TableContainer>
   )

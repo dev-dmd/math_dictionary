@@ -13,7 +13,7 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.black,
-    padding: '20px 10px'
+    padding: '30px'
   },
   body: {
     fontSize: 14,
@@ -40,32 +40,36 @@ const useStyles = makeStyles({
 
 function Datatable({ data }) {
   const classes = useStyles();
+  const columns = data[0] && Object.keys(data[0]);
+
   return (
     <TableContainer className={classes.container} component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="customized table">
         <TableHead>
-          
-            <StyledTableRow hover>
-            <StyledTableCell component="th" scope="row">
+        <StyledTableCell align="left">
               Primer | Example
-            </StyledTableCell> 
-            <StyledTableCell component="th" scope="row">
-              {/**Empty */}
-            </StyledTableCell>               
-            </StyledTableRow>
-    
+            </StyledTableCell>  
+          <StyledTableRow>          
+            {
+              data[0] && columns.slice(1,3).map((heading)=>
+              <StyledTableCell align="left" key={heading.length}>
+                {heading}
+              </StyledTableCell>
+              )
+            }          
+          </StyledTableRow>
         </TableHead>
         <TableBody>
           {data && data.map((row) => {
             console.log(row)
             return (
               <StyledTableRow hover key={row.id}>
-                <StyledTableCell component="th" scope="row">
-                 {row.num}
+                <StyledTableCell align="left" component="th" scope="row">
+                  {row.Srpski}
                 </StyledTableCell>
-                <StyledTableCell component="th" scope="row">
-                  {row.Srpski === 0 ? row.English : row.Srpski}
-                </StyledTableCell>              
+                <StyledTableCell align="left" component="th" scope="row">
+                  {row.English}
+                </StyledTableCell>           
               </StyledTableRow>
             )
           })}

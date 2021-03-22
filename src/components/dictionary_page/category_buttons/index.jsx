@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function CategoryButtons({ name, icon, srb, eng, match }) {
+function CategoryButtons({ name, icon, srb, eng }) {
   const classes = useStyles();
   return (  
     <Card className={classes.root}>

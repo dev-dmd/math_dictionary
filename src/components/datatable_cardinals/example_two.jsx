@@ -40,20 +40,19 @@ const useStyles = makeStyles({
 
 function Datatable({ data }) {
   const classes = useStyles();
+  console.log(Object.values(data[0])[1])
   return (
     <TableContainer className={classes.container} component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="customized table">
-        <TableHead>
-          
-            <StyledTableRow hover>
-            <StyledTableCell component="th" scope="row">
-              Primer | Example
-            </StyledTableCell> 
-            <StyledTableCell component="th" scope="row">
-              {/**Empty */}
-            </StyledTableCell>               
-            </StyledTableRow>
-    
+        <TableHead>          
+          <StyledTableRow hover>
+          <StyledTableCell component="th" scope="row">
+           
+          </StyledTableCell> 
+          <StyledTableCell component="th" scope="row">
+            {/**Empty */}
+          </StyledTableCell>               
+          </StyledTableRow>    
         </TableHead>
         <TableBody>
           {data && data.map((row) => {
@@ -61,11 +60,14 @@ function Datatable({ data }) {
             return (
               <StyledTableRow hover key={row.id}>
                 <StyledTableCell component="th" scope="row">
-                 {row.num}
+                  {Object.values(row)[1]}
                 </StyledTableCell>
                 <StyledTableCell component="th" scope="row">
-                  {row.Srpski === 0 ? row.English : row.Srpski}
-                </StyledTableCell>              
+                  {Object.values(row)[2]}
+                </StyledTableCell>
+                <StyledTableCell component="th" scope="row">
+                  {Object.values(row)[3]}
+                </StyledTableCell>             
               </StyledTableRow>
             )
           })}

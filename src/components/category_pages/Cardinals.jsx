@@ -5,8 +5,9 @@ import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import {
   Link
 } from "react-router-dom";
-import DatatableDigit from '../datatable_digit';
-import DatatableExample from '../datatable_examples';
+import DatatableCardinals from '../datatable_cardinals';
+import DatatableExampleTwo from '../datatable_cardinals/example_two';
+import DatatableExample from '../datatable_cardinals/example';
 import data from '../dictionary_page/category_data/category.json';
 import Header from '../header';
 import Footer from '../footer';
@@ -17,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     opacity: '.9'
   },
   page: {
-    backgroundColor: '#262626'
+    backgroundColor: '#262626',
+    minHeight: '100vh'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -51,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Digit() {
+function Cardinals() {
   const classes = useStyles();
   return (    
     <div className={classes.page}>
@@ -70,7 +72,7 @@ function Digit() {
         </Grid>
         <Grid items xs={6}>
           <Typography className={classes.title}  variant="h4" component="h2">
-            Place value of Digits
+            Cardinal Numbers
           </Typography>
         </Grid>
         <Grid items xs={3}>
@@ -85,13 +87,14 @@ function Digit() {
             <Grid className={classes.example} item xs={6}>            
                 <Card>
                   <CardContent>
-                    <DatatableExample data={data.category[0].example}/>
+                    <DatatableExample data={data.category[2].cardinal_page[1].example}/>
+                    <DatatableExampleTwo data={data.category[2].cardinal_page[2].example_two}/>
                   </CardContent>
                 </Card>
             </Grid>
             <Grid item xs={6}>
               <Paper className={classes.paper}>
-                <DatatableDigit data={data.category[0].digits}/>
+                <DatatableCardinals data={data.category[2].cardinal_page[0].cardinal}/>
               </Paper>
             </Grid>
           </Grid>
@@ -103,4 +106,4 @@ function Digit() {
   )
 }
 
-export default Digit;
+export default Cardinals;
