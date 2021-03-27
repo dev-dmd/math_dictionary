@@ -36,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.primary.contrastText,
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      fontSize: 26,
+    },
   },
   toolbar: {
     display: 'flex',
@@ -82,14 +85,14 @@ function Digit() {
       <Container maxWidth="xl">
         <Paper elevation={0} className={classes.paperWraper}>
           <Grid container spacing={3}>
-            <Grid className={classes.example} item xs={6}>            
+            <Grid className={classes.example} item xs={12} md={6}>            
                 <Card>
                   <CardContent>
                     <DatatableExample data={data.category[0].example}/>
                   </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Paper className={classes.paper}>
                 <DatatableDigit data={data.category[0].digits}/>
               </Paper>

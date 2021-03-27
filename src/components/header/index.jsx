@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     textAlign: 'center',
     padding: '15px',
+    fontSize: 26,
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -93,8 +94,8 @@ export default function Header({ handleLoginClick }) {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Typography className={classes.mobTitle} variant="h6" noWrap>
-          Math Dictionary
+        <Typography className={classes.mobTitle} variant="h1" noWrap>
+          Serbian - English Mathematical Dictionary
         </Typography>
         <Toolbar className={classes.toolbar}>        
             <Typography className={classes.title} variant="h6" noWrap>

@@ -30,7 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.primary.contrastText,
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      fontSize: 26,
+    },
   },
 }));
 

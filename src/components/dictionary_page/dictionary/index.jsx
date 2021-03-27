@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CategoryButtons from '../category_buttons';
 import DictionarySearch from '../dictionary_search';
+import SearchBar from '../dictionary_search/search';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 // Button Icons
 import measurement_icon from '../category_icons/measurement.svg';
@@ -88,13 +89,13 @@ function Dictionary({ match }) {
   };
 
   function searchTable(rows) {
-    return rows.filter((row) => row.Srpski.toLowerCase().indexOf(search) > -1 || row.English.toLowerCase().indexOf(search) > -1);
+    return rows.filter((row) => row.Srpski.toLowerCase().indexOf(search.toLowerCase()) > -1 || row.English.toLowerCase().indexOf(search.toLowerCase()) > -1);
   }
 
   return (
       <div className={classes.root}>
         <Grid container spacing={3}>
-          <CategoryDrawer />
+          <CategoryDrawer match={match}/>
           <Grid className={classes.btns_container} item xs>
             <Paper elevation={0} className={classes.btns}>  
             {
@@ -115,6 +116,7 @@ function Dictionary({ match }) {
           <Grid item xs={12} sm={12} md={6}>
             <Paper elevation={0} className={classes.paperContainer}>
               <Paper elevation={0} className={classes.paper}>
+            {/*<SearchBar search={search} handleSearch={handleSearch} />*/}
                 <DictionarySearch search={search} handleSearch={handleSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>

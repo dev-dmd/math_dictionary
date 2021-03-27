@@ -39,14 +39,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(200,200,200,.2)',
     borderRadius: '0 15px 15px 0',
     padding: '0px 0px',
-    margin: '0px 0 0 -30px'
+    margin: '0px 0 0 -20px',
+    boxShadow: '0 0 30px #a2fdec'
   },
   icons: {
     filter: 'invert(1)'
   }
 }));
 
-export default function CategoryDrawer() {
+export default function CategoryDrawer({ match }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -79,7 +80,7 @@ export default function CategoryDrawer() {
           </ListItem>
         </ListSubheader>
         {[{text:'Units of Measurement', link:"units", icons: measurement}, {text:'Place value of digit', link:"digit", icons: digit}, {text:'Names of Geometric Figures and Solids', link:"figures", icons: figures}, {text:'Greek Alphabet', link:"greek", icons: greek}, {text:'Cardinal Numbers', link:"cardinal", icons: cardinal}, {text:'Names of Polygons', link:"polygons", icons: polygons}, {text:'Names of Large Numbers', link:"large-numbers", icons: large_num}, {text:'Prefixes for Units of Measurement', link:"prefixes", icons: prefixes}, {text:'Fractions', link:"fractions", icons: fractions}, {text:'Ordinal Numbers', link:"ordinal-numbers", icons: ordinal}, {text:'Exponents and Radicals (roots)', link:"roots", icons: roots}, {text:'Trigonometry', link:"trigonometry", icons: sinusoid}].map((row) => (
-          <Link to={`math_dictionary/${row.link}`} key={row.text}>
+          <Link to={`${match.url}${row.link}`} key={row.text}>
             <ListItem button>
               <ListItemIcon>
                 <Icon>

@@ -8,12 +8,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import PhotoIcon from '@material-ui/icons/Photo';
+import { Typography } from '@material-ui/core';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.text.disabled,
-    // fontFamily: 'Crayon sans-serif'
     fontWeight: theme.typography.fontWeightBold
   },
   body: {
@@ -38,13 +38,11 @@ const useStyles = makeStyles((theme) => ({
     opacity: '.8'
   },
   empty: {
-    position: 'absolute',
-    top: '30%',
-    left: '50%',
-    transform: 'translate(-50%, 50%)',
     color: theme.palette.grey[300],
     fontSize: '24px',
     fontWeight: '600',
+    textAlign: 'center',
+    padding: '20px'
   }
 }));
 
@@ -52,7 +50,7 @@ function Datatable({ data, search }) {
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
   return (
-    <TableContainer className={classes.container} component={Paper}>
+    <TableContainer className={classes.container} component={Paper}>    
       <Table stickyHeader className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -64,10 +62,9 @@ function Datatable({ data, search }) {
             )
           }          
           </TableRow>
-        </TableHead>
-        <TableBody>
-        
-          {search === '' || data.length === 0 ? <TableBody className={classes.empty}>{ data = ['result not found'] }</TableBody> : data && data.slice(0,100).map((row) => (
+        </TableHead>        
+        <TableBody>        
+          {search === '' || data.length === 0 ? data = [] : data && data.slice(0,100).map((row) => (
             <StyledTableRow hover key={row.id}>
               <StyledTableCell component="th" scope="row">
                 {row.Srpski}
@@ -82,6 +79,9 @@ function Datatable({ data, search }) {
           ))}
         </TableBody>
       </Table>
+      {
+        search === '' || data.length === 0 ? <Typography className={classes.empty}>result not found</Typography> : null
+      }
     </TableContainer>
   )
 }

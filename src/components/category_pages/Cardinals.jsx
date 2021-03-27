@@ -38,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.primary.contrastText,
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      fontSize: 26,
+    },
   },
   toolbar: {
     display: 'flex',
@@ -84,7 +87,7 @@ function Cardinals() {
       <Container maxWidth="xl">
         <Paper elevation={0} className={classes.paperWraper}>
           <Grid container spacing={3}>
-            <Grid className={classes.example} item xs={6}>            
+            <Grid className={classes.example} item xs={12} md={6}>            
                 <Card>
                   <CardContent>
                     <DatatableExample data={data.category[2].cardinal_page[1].example}/>
@@ -92,7 +95,7 @@ function Cardinals() {
                   </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Paper className={classes.paper}>
                 <DatatableCardinals data={data.category[2].cardinal_page[0].cardinal}/>
               </Paper>

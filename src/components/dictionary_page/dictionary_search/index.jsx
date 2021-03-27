@@ -27,18 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
 function DictionarySearch({ search, handleSearch }) {
   const classes = useStyles();
-  
+  const [value, setValue] = React.useState();
   return (
     <div>
-      {/* <SearchBar
-      //   onChange={console.log('change')}
-      //   value={search}
-      //   onRequestSearch={(e) => console.log(search)}
-      //   style={{
-      //     margin: '0 auto',
-      //     minWidth: 1
-      //   }}
-      // />*/}
       <Paper component="form" className={classes.root}>
         <InputBase
           value={search}
