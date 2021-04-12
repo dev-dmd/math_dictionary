@@ -5,7 +5,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import CardMedia from '@material-ui/core/CardMedia';
 import { Card } from '@material-ui/core';
-import video from './mp4-pig.mp4';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -20,24 +19,28 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   media: {
-    height: 270,
+    width: 600,
+    height: 300,
     [theme.breakpoints.down('sm')]: {
-      width: 270,
+      width: 300,
       height: 150,
     },
   },
 }));
 
-export default function VideoModal({ open, onClose }) {
+export default function ImageModal({ open, handleClose, src }) {
   const classes = useStyles();
   return (
     <div>
       <Modal
+        disablePortal
+        disableEnforceFocus
+        disableAutoFocus
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        onClose={onClose}
+        onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -47,10 +50,10 @@ export default function VideoModal({ open, onClose }) {
         <Fade in={open}>
           <Card className={classes.media}>       
               <CardMedia
-              component="video"
+              component="img"
               controls              
-              src={video}
-              title="math"
+              src={src}
+              title="math image"
               />      
           </Card>
         </Fade>

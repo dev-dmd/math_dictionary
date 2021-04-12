@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CategoryButtons from '../category_buttons';
 import DictionarySearch from '../dictionary_search';
-import SearchBar from '../dictionary_search/search';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 // Button Icons
 import measurement_icon from '../category_icons/measurement.svg';
@@ -25,6 +24,7 @@ import CategoryDrawer from '../category_drawer';
 import DataTable from '../../datatable_dictionary';
 import data from '../dictionary_data/dictionary.json';
 import { Link } from 'react-router-dom';
+import InfiniteTable from '../../datatable_dictionary';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,11 +78,11 @@ const rows = [
 ];
 
 function Dictionary({ match }) {
+  let dictionary = data.dictionary;
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
   const [search, setSearch] = useState('');
-  let dictionary = data.dictionary;
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -90,6 +90,11 @@ function Dictionary({ match }) {
 
   function searchTable(rows) {
     return rows.filter((row) => row.Srpski.toLowerCase().indexOf(search.toLowerCase()) > -1 || row.English.toLowerCase().indexOf(search.toLowerCase()) > -1);
+  }
+
+  function onRequestSearch(e) {
+    e.preventDefault();
+    console.log('search request');
   }
 
   return (
@@ -116,8 +121,7 @@ function Dictionary({ match }) {
           <Grid item xs={12} sm={12} md={6}>
             <Paper elevation={0} className={classes.paperContainer}>
               <Paper elevation={0} className={classes.paper}>
-            {/*<SearchBar search={search} handleSearch={handleSearch} />*/}
-                <DictionarySearch search={search} handleSearch={handleSearch} />
+            <DictionarySearch search={search} handleSearch={handleSearch} onRequestSearch={onRequestSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>
                 <DataTable search={search} data={searchTable(dictionary)} />

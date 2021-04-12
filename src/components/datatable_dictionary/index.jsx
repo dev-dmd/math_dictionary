@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,7 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import PhotoIcon from '@material-ui/icons/Photo';
-import { Typography } from '@material-ui/core';
+import { IconButton, Typography } from '@material-ui/core';
+import ImageModal from '../dictionary_page/image_modal';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -49,40 +51,77 @@ const useStyles = makeStyles((theme) => ({
 function Datatable({ data, search }) {
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
-  
+
+  const [src, setSrc] = useState('');
+  const [open, setOpen] = React.useState(false);
+  const [rows, setRows] = useState({
+    items: Array.from({ length: 50 }),
+  });
+
+  const fetchMore = () => {
+    setRows({
+      items: rows.items.concat(Array.from({ length: 50 }))
+    });
+  };
+
+  const handleOpen = (prop) => {
+    setOpen(true);
+    setSrc(prop);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSrc('');
+  };
+
   return (
-    <TableContainer className={classes.container} component={Paper}>    
+    <TableContainer id="scrollableDiv" className={classes.container} component={Paper}> 
+      <InfiniteScroll
+      dataLength={rows.items}
+      next={fetchMore}
+      hasMore={true}
+      height={650}
+      scrollableTarget="scrollableDiv"
+    >   
       <Table stickyHeader className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-          {
-            data[0] && columns.slice(1,4).map((heading)=>
-            <StyledTableCell key={heading.length}>
-              {heading}
-            </StyledTableCell>
-            )
-          }          
-          </TableRow>
-        </TableHead>        
-        <TableBody>        
-          {search === '' || data.length === 0 ? data = [] : data && data.slice(0,100).map((row) => (
-            <StyledTableRow hover key={row.id}>
-              <StyledTableCell component="th" scope="row">
-                {row.Srpski}
+          <TableHead>
+            <TableRow>
+            {
+              data[0] && columns.slice(1,4).map((heading)=>
+              <StyledTableCell key={heading.length}>
+                {heading}
               </StyledTableCell>
-              <StyledTableCell>{row.English}</StyledTableCell>
-              <StyledTableCell align="center">
-              {
-                row.Image !== "0" ? <PhotoIcon /> : null
-              }
-              </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
+              )
+            }          
+            </TableRow>
+          </TableHead>        
+          <TableBody>        
+            {search === '' || data.length === 0 ? data = [] : data && data.slice(0, rows.items.length).map((row) => (
+              <StyledTableRow hover key={row.id}>
+                <StyledTableCell component="th" scope="row">
+                  {row.Srpski}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {row.English}
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                {
+                  row.Image !== "0" ? (
+                  <IconButton onClick={() => handleOpen(row.Image)}>
+                    <PhotoIcon />
+                  </IconButton>
+                ): null
+                }
+                </StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
       </Table>
       {
         search === '' || data.length === 0 ? <Typography className={classes.empty}>result not found</Typography> : null
       }
+      <ImageModal handleClose={handleClose} open={open} src={src} />
+      </InfiniteScroll>
     </TableContainer>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from 'material-ui-search-bar';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -25,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function DictionarySearch({ search, handleSearch }) {
+function DictionarySearch({ search, handleSearch, onRequestSearch }) {
   const classes = useStyles();
-  const [value, setValue] = React.useState();
+  
   return (
     <div>
       <Paper component="form" className={classes.root}>
@@ -38,7 +37,7 @@ function DictionarySearch({ search, handleSearch }) {
           placeholder="Search words in Serbian or English"
           inputProps={{ 'aria-label': 'Search words in Serbian or English' }}
         />
-        <IconButton type="submit" className={classes.iconButton} aria-label="search">
+        <IconButton onClick={onRequestSearch} type="submit" className={classes.iconButton} aria-label="search">
           <SearchIcon />
         </IconButton>
       </Paper>
