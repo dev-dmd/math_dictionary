@@ -121,7 +121,7 @@ function Dictionary({ match }) {
           <Grid item xs={12} sm={12} md={6}>
             <Paper elevation={0} className={classes.paperContainer}>
               <Paper elevation={0} className={classes.paper}>
-            <DictionarySearch search={search} handleSearch={handleSearch} onRequestSearch={onRequestSearch} />
+                <DictionarySearch search={search} handleSearch={handleSearch} onRequestSearch={onRequestSearch} />
               </Paper>
               <Paper elevation={0} className={classes.paper}>
                 <DataTable search={search} data={searchTable(dictionary)} />
