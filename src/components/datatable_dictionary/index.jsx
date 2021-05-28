@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
 function Datatable({ data, search }) {
   const classes = useStyles();
   const columns = data[0] && Object.keys(data[0]);
-
+  const addSrpskiToFirstElement = 'Srpski';
+  const newOrderColumns = [addSrpskiToFirstElement].concat(columns).slice(0, 3);
   const [src, setSrc] = useState('');
   const [open, setOpen] = React.useState(false);
   const [rows, setRows] = useState({
@@ -87,8 +88,8 @@ function Datatable({ data, search }) {
           <TableHead>
             <TableRow>
             {
-              data[0] && columns.slice(1,4).map((heading)=>
-              <StyledTableCell key={heading.length}>
+              newOrderColumns.map((heading, index)=>
+              <StyledTableCell key={index}>
                 {heading}
               </StyledTableCell>
               )
@@ -106,8 +107,8 @@ function Datatable({ data, search }) {
                 </StyledTableCell>
                 <StyledTableCell align="center">
                 {
-                  row.Image !== "0" ? (
-                  <IconButton onClick={() => handleOpen(row.Image)}>
+                  row.Primer !== "0" ? (
+                  <IconButton onClick={() => handleOpen(row.Primer)}>
                     <PhotoIcon />
                   </IconButton>
                 ): null

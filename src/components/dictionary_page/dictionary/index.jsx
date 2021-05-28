@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -22,9 +22,8 @@ import trigonometry_icon from '../category_icons/sinusoid.svg';
 // Button Icons
 import CategoryDrawer from '../category_drawer';
 import DataTable from '../../datatable_dictionary';
-import data from '../dictionary_data/dictionary.json';
 import { Link } from 'react-router-dom';
-import InfiniteTable from '../../datatable_dictionary';
+import db from '../../../config/firebase';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,18 +77,30 @@ const rows = [
 ];
 
 function Dictionary({ match }) {
-  let dictionary = data.dictionary;
+  // let dictionary = data.dictionary;
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
+  const [dictionary, setDictionary] = useState([]);
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    const dictionaryRef = db.database().ref('dictionary');
+    dictionaryRef.on('value', (snapshot) => {
+      if (snapshot.val() !== null) {
+        setDictionary([
+          ...snapshot.val()
+        ])
+      }
+    })
+  }, []);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
   function searchTable(rows) {
-    return rows.filter((row) => row.Srpski.toLowerCase().indexOf(search.toLowerCase()) > -1 || row.English.toLowerCase().indexOf(search.toLowerCase()) > -1);
+    return rows.lenght !== 0 ? rows.filter((row) => row.Srpski.toLowerCase().indexOf(search.toLowerCase()) > -1 || row.English.toLowerCase().indexOf(search.toLowerCase()) > -1) : dictionary;
   }
 
   function onRequestSearch(e) {
@@ -104,10 +115,10 @@ function Dictionary({ match }) {
           <Grid className={classes.btns_container} item xs>
             <Paper elevation={0} className={classes.btns}>  
             {
-              matches ? rows.slice(0,6).map(row => (
+              matches ? rows.slice(0,6).map((row, index) => (
               <Link to={`${match.url}${row.name}`}>      
                 <CategoryButtons
-                  key={row.name}
+                  key={index}
                   name={row.name}
                   icon={row.icon}
                   srb={row.srb_name}
@@ -131,10 +142,10 @@ function Dictionary({ match }) {
           <Grid className={classes.btns_container} item xs>
             <Paper elevation={0} className={classes.btns}>  
             {
-              matches ? rows.slice(6,12).map(row => (
+              matches ? rows.slice(6,12).map((row, index) => (
               <Link to={`${match.url}${row.name}`}>
                 <CategoryButtons
-                  key={row.name}
+                  key={index}
                   name={row.name}
                   icon={row.icon}
                   srb={row.srb_name}
