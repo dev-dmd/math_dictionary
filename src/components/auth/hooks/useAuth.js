@@ -1,16 +1,5 @@
-import React, { useState, useEffect, useContext, createContext} from 'react';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-
-firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
-})
+import React, { useState, useEffect, useContext, createContext } from 'react';
+import firebase from '../../../config/firebase';
 
 const AuthContext = createContext();
 
@@ -23,25 +12,22 @@ export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(true);
 
   const sendSignInLinkToEmail = email => {
-    return firebase.auth().sendSignInLinkToEmail(email, {
-      url: 'http://localhost:3000/confirm',
+    firebase.auth().sendSignInLinkToEmail(email, {
+      url: 'http://localhost:3000/',
       handleCodeInApp: true,
-    }).then(() => {
-      return true;
     });
+    return true;
   };
   
-  const singInWithEmailLink = (email, code) => {
-    return firebase.auth().signInWithEmailLink(email, code).then(result => {
-      setUser(result.user);
-      return true;
-    });
+  const singInWithEmailLink = async (email, code) => {
+    const result = await firebase.auth().signInWithEmailLink(email, code);
+    setUser(result.user);
+    return true;
   };
 
-  const logout = () => {
-    return firebase.auth().signOut().then(() => {
-      setUser(null);
-    });
+  const logout = async () => {
+    await firebase.auth().signOut();
+    setUser(null);
   };
 
   useEffect(() => {
@@ -67,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={allValues}>
       {
-        isAuth && children
+        !isAuth && children
       }
     </AuthContext.Provider>
   )

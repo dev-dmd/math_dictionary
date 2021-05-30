@@ -58,49 +58,49 @@ function Digit() {
   const classes = useStyles();
   return (    
     <div className={classes.page}>
-    <Header />
-      <Toolbar className={classes.toolbar}>
-        <Grid items xs={3}>
-          <Link exact to="/">
-            <Button
-              variant="outline"
-              className={classes.menuButton}
-              startIcon={<KeyboardReturnIcon />}
-            >
-              go back
-            </Button>          
-          </Link>
-        </Grid>
-        <Grid items xs={6}>
-          <Typography className={classes.title}  variant="h4" component="h2">
-            Place value of Digits
-          </Typography>
-        </Grid>
-        <Grid items xs={3}>
-          {/*Empty block */}
-        </Grid>
-      </Toolbar>
-      {/* Category Content */}
-      <div className={classes.root}>
-      <Container maxWidth="xl">
-        <Paper elevation={0} className={classes.paperWraper}>
-          <Grid container spacing={3}>
-            <Grid className={classes.example} item xs={12} md={6}>            
-                <Card>
-                  <CardContent>
-                    <DatatableExample data={data.category[0].example}/>
-                  </CardContent>
-                </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.paper}>
-                <DatatableDigit data={data.category[0].digits}/>
-              </Paper>
-            </Grid>
+      <Header />
+        <Toolbar className={classes.toolbar}>
+          <Grid items xs={3}>
+            <Link exact to="/">
+              <Button
+                variant="outline"
+                className={classes.menuButton}
+                startIcon={<KeyboardReturnIcon />}
+              >
+                go back
+              </Button>          
+            </Link>
           </Grid>
-        </Paper>
-      </Container>
-      </div>
+          <Grid items xs={6}>
+            <Typography className={classes.title}  variant="h4" component="h2">
+              Place value of Digits
+            </Typography>
+          </Grid>
+          <Grid items xs={3}>
+            {/*Empty block */}
+          </Grid>
+        </Toolbar>
+        {/* Category Content */}
+        <div className={classes.root}>
+          <Container maxWidth="xl">
+            <Paper elevation={0} className={classes.paperWraper}>
+              <Grid container spacing={3}>
+                <Grid className={classes.example} item xs={12} md={6}>            
+                    <Card>
+                      <CardContent>
+                        <DatatableExample data={data.category[0].example}/>
+                      </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Paper className={classes.paper}>
+                    <DatatableDigit data={data.category[0].digits}/>
+                  </Paper>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Container>
+        </div>
       <Footer />
     </div>
   )

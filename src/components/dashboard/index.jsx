@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import SendIcon from '@material-ui/icons/Send';
 import db from '../../config/firebase';
-import { FormControl, Grid, InputAdornment, InputLabel, OutlinedInput, FormHelperText } from '@material-ui/core';
+import { FormControl, Grid, InputAdornment, InputLabel, OutlinedInput } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import UsersList from './UsersList';

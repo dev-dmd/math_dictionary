@@ -71,7 +71,7 @@ const SignInPage = ({ handleHomeClick }) => {
               New
             </Typography>
             <Typography variant="caption" className={classes.text}>
-            Visit our website and find out more
+              Visit our website and find out more
             </Typography>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <FacebookIcon />

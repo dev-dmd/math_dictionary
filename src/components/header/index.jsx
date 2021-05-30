@@ -9,6 +9,7 @@ import SignedInLinks from '../header/SignedInLinks';
 import video_icon from './videoBtn.svg';
 import Tooltip from '@material-ui/core/Tooltip';
 import VideoModal from '../video_modal';
+import { useAuth } from '../auth/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,9 +79,9 @@ const LightTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function Header({ handleLoginClick }) {
+export default function Header() {
   const classes = useStyles();
-
+  const {user, logout} = useAuth();
   const [open, setOpen] = React.useState(false);
   
   const handleOpen = () => {
@@ -106,9 +107,12 @@ export default function Header({ handleLoginClick }) {
               <IconButton className={classes.video_icon} onClick={handleOpen}>
                 <img height="50%" width="50%" src={video_icon} alt="video tutorial" />           
               </IconButton>
-            </LightTooltip>      
-            <SignedOutLinks handleLoginClick={handleLoginClick} />
-            <SignedInLinks handleLoginClick={handleLoginClick} />
+            </LightTooltip>
+            {
+              user ? (
+                <SignedInLinks handleLogout={logout} />
+              ) : <SignedOutLinks />
+            }  
         </Toolbar>        
       </AppBar>
       <VideoModal onClose={handleClose} open={open} />

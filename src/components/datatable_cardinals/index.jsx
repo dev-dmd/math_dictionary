@@ -48,40 +48,39 @@ function Datatable({ data }) {
   return (
     <TableContainer component={Paper}>
       <Table stickyHeader className={classes.table} aria-label="customized table">
-            <TableContainer className={classes.container} >
-              <Table stickyHeader className={classes.table}>
-                <TableHead>
-                  <TableRow>
-                  {
-                    data[0] && columns.slice(1,5).map((heading)=>
-                    <StyledTableCell align="center" key={heading.length}>
-                      {heading}
-                    </StyledTableCell>
-                    )
-                  }          
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {data && data.map((row) => (
-                      <StyledTableRow hover key={row.id}>
-                        <StyledTableCell align="center" component="th" scope="row">
-                          {Object.values(row)[1]}
-                        </StyledTableCell>
-                        <StyledTableCell align="center" component="th" scope="row">
-                          {Object.values(row)[2]}
-                        </StyledTableCell>
-                        <StyledTableCell align="center" component="th" scope="row">
-                          {Object.values(row)[3]}
-                        </StyledTableCell>  
-                        <StyledTableCell align="center" component="th" scope="row">
-                          {Object.values(row)[4]}
-                        </StyledTableCell>                 
-                      </StyledTableRow>
-                    
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+        <TableContainer className={classes.container} >
+          <Table stickyHeader className={classes.table}>
+            <TableHead>
+              <TableRow>
+              {
+                data[0] && columns.slice(1,5).map((heading)=>
+                <StyledTableCell align="center" key={heading.length}>
+                  {heading}
+                </StyledTableCell>
+                )
+              }          
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {data && data.map((row) => (
+                <StyledTableRow hover key={row.id}>
+                  <StyledTableCell align="center" component="th" scope="row">
+                    {Object.values(row)[1]}
+                  </StyledTableCell>
+                  <StyledTableCell align="center" component="th" scope="row">
+                    {Object.values(row)[2]}
+                  </StyledTableCell>
+                  <StyledTableCell align="center" component="th" scope="row">
+                    {Object.values(row)[3]}
+                  </StyledTableCell>  
+                  <StyledTableCell align="center" component="th" scope="row">
+                    {Object.values(row)[4]}
+                  </StyledTableCell>                 
+                </StyledTableRow>                
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Table>
     </TableContainer>
   )

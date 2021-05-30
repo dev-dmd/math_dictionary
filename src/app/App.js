@@ -8,10 +8,10 @@ import Dictionary from '../components/dictionary_page/dictionary';
 function App({ match }) {
   
   return (
-      <div component="main" className="page">      
-        <Header />
-        <Dictionary match={match} />
-        <Footer />      
+      <div component="main" className="page">
+          <Header />
+          <Dictionary match={match} />
+          <Footer /> 
       </div>
   )
 }

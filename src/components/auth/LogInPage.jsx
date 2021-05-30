@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import { AppBar, Button, Card, CardActions, CardContent, Container, FormControl, FormHelperText, IconButton, InputLabel, TextField, Toolbar, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +11,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { useAuth } from '../auth/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,11 +44,10 @@ const useStyles = makeStyles((theme) => ({
 
 const SignInPage = ({ handleHomeClick }) => {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    amount: '',
+  const { sendSignInLinkToEmail } = useAuth();
+  const [values, setValues] = useState({
+    email: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
 
@@ -59,9 +59,9 @@ const SignInPage = ({ handleHomeClick }) => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  const handleSubmit = async () => {    
+   await sendSignInLinkToEmail(values.email)
+  }
 
   return (
     <>
@@ -72,7 +72,7 @@ const SignInPage = ({ handleHomeClick }) => {
               New
             </Typography>
             <Typography variant="caption" className={classes.text}>
-            Visit our website and find out more
+              Visit our website and find out more
             </Typography>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <FacebookIcon />
@@ -104,15 +104,18 @@ const SignInPage = ({ handleHomeClick }) => {
                 Log in on the internal platform
               </Typography>
             </Paper>
-            <form className={classes.textFields} noValidate autoComplete="off">
+            <form onSubmit={handleSubmit} className={classes.textFields} noValidate autoComplete="off">
               <Paper elevation={0} className={classes.paper}>
                 <FormControl variant="outlined">
                   <TextField
+                    name='email'
                     id="outlined-email-input"
                     label="Email Address"
                     type="email"
                     autoComplete="current-email"
                     variant="outlined"
+                    value={values.email}
+                    onChange={handleChange('email')}
                   />     
                   <FormHelperText id="my-email-text">We'll never share your email.</FormHelperText>        
                 </FormControl>      
@@ -121,6 +124,7 @@ const SignInPage = ({ handleHomeClick }) => {
                 <FormControl variant="outlined">
                   <InputLabel htmlFor="component-simple">Password</InputLabel>
                     <OutlinedInput
+                    name='password'
                     id="outlined-adornment-password"
                     type={values.showPassword ? 'text' : 'password'}
                     value={values.password}
@@ -131,7 +135,6 @@ const SignInPage = ({ handleHomeClick }) => {
                         <IconButton
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
                           {values.showPassword ? <Visibility /> : <VisibilityOff />}
@@ -144,7 +147,7 @@ const SignInPage = ({ handleHomeClick }) => {
                 </FormControl>            
               </Paper>
               <Paper elevation={0} className={classes.paper}>
-                  <Button color="primary" variant="contained" fullWidth>Log in</Button>
+                  <Button type="submit" color="primary" variant="contained" fullWidth>Log in</Button>
               </Paper>
             </form>
           </CardContent>

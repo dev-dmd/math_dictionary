@@ -60,50 +60,50 @@ function Cardinals() {
   const classes = useStyles();
   return (    
     <div className={classes.page}>
-    <Header />
-      <Toolbar className={classes.toolbar}>
-        <Grid items xs={3}>
-          <Link exact to="/">
-            <Button
-              variant="outline"
-              className={classes.menuButton}
-              startIcon={<KeyboardReturnIcon />}
-            >
-              go back
-            </Button>          
-          </Link>
-        </Grid>
-        <Grid items xs={6}>
-          <Typography className={classes.title}  variant="h4" component="h2">
-            Cardinal Numbers
-          </Typography>
-        </Grid>
-        <Grid items xs={3}>
-          {/*Empty block */}
-        </Grid>
-      </Toolbar>
-      {/* Category Content */}
-      <div className={classes.root}>
-      <Container maxWidth="xl">
-        <Paper elevation={0} className={classes.paperWraper}>
-          <Grid container spacing={3}>
-            <Grid className={classes.example} item xs={12} md={6}>            
-                <Card>
-                  <CardContent>
-                    <DatatableExample data={data.category[2].cardinal_page[1].example}/>
-                    <DatatableExampleTwo data={data.category[2].cardinal_page[2].example_two}/>
-                  </CardContent>
-                </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Paper className={classes.paper}>
-                <DatatableCardinals data={data.category[2].cardinal_page[0].cardinal}/>
-              </Paper>
-            </Grid>
+      <Header />
+        <Toolbar className={classes.toolbar}>
+          <Grid items xs={3}>
+            <Link exact to="/">
+              <Button
+                variant="outline"
+                className={classes.menuButton}
+                startIcon={<KeyboardReturnIcon />}
+              >
+                go back
+              </Button>          
+            </Link>
           </Grid>
-        </Paper>
-      </Container>
-      </div>
+          <Grid items xs={6}>
+            <Typography className={classes.title}  variant="h4" component="h2">
+              Cardinal Numbers
+            </Typography>
+          </Grid>
+          <Grid items xs={3}>
+            {/*Empty block */}
+          </Grid>
+        </Toolbar>
+        {/* Category Content */}
+        <div className={classes.root}>
+          <Container maxWidth="xl">
+            <Paper elevation={0} className={classes.paperWraper}>
+              <Grid container spacing={3}>
+                <Grid className={classes.example} item xs={12} md={6}>            
+                    <Card>
+                      <CardContent>
+                        <DatatableExample data={data.category[2].cardinal_page[1].example}/>
+                        <DatatableExampleTwo data={data.category[2].cardinal_page[2].example_two}/>
+                      </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Paper className={classes.paper}>
+                    <DatatableCardinals data={data.category[2].cardinal_page[0].cardinal}/>
+                  </Paper>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Container>
+        </div>
       <Footer />
     </div>
   )

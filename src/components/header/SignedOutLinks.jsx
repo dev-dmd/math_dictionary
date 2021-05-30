@@ -63,23 +63,11 @@ export default function SignedOutLinks({ handleLoginClick }) {
             </Button>     
           </NavLink>
         </LightTooltip>
-        <LightTooltip title="Napravite nalog">
-          <NavLink to="/signin" className={classes.navLink} onClick={handleLoginClick}>
-            <Button color="inherit" className={classes.navBtn}>
-              Sign In
-            </Button>     
-          </NavLink>
-        </LightTooltip>
       </div>
       <div className={classes.sectionMobile}>
         <NavLink to="/dashboard" className={classes.navLink} >
           <Button color="inherit" className={classes.navBtn}>
             Dashboard
-          </Button>     
-        </NavLink>
-        <NavLink to="/login" className={classes.navLink} onClick={handleLoginClick} >
-          <Button color="inherit" className={classes.navBtn}>
-            Log in
           </Button>     
         </NavLink>
       </div>

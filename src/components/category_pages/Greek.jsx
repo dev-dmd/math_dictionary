@@ -41,40 +41,40 @@ function Greek() {
   const classes = useStyles();
   return (
     <div className={classes.page}>
-    <Header />
-      <Toolbar>
-        <Grid items xs={3}>
-          <Link exact to="/">
-              <Button
-                variant="outline"
-                color=""
-                className={classes.menuButton}
-                startIcon={<KeyboardReturnIcon />}
-              >
-                go back
-              </Button>          
-            </Link>
-        </Grid>
-        <Grid items xs={6}>
-          <Typography className={classes.title}  variant="h4" component="h2">
-            Greek Alphabet
-          </Typography>
-        </Grid>
-        <Grid items xs={3}>
-        {/*Empty block */}
-        </Grid>
-      </Toolbar>
-      <div className={classes.root}>
-       <Container maxWidth="md">
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper elevation={0} className={classes.paper}>
-              <Datatable data={data.category[1].greek}/>
-            </Paper>
+      <Header />
+        <Toolbar>
+          <Grid items xs={3}>
+            <Link exact to="/">
+                <Button
+                  variant="outline"
+                  color=""
+                  className={classes.menuButton}
+                  startIcon={<KeyboardReturnIcon />}
+                >
+                  go back
+                </Button>          
+              </Link>
           </Grid>
-        </Grid>
-       </Container>
-      </div>
+          <Grid items xs={6}>
+            <Typography className={classes.title}  variant="h4" component="h2">
+              Greek Alphabet
+            </Typography>
+          </Grid>
+          <Grid items xs={3}>
+          {/*Empty block */}
+          </Grid>
+        </Toolbar>
+        <div className={classes.root}>
+          <Container maxWidth="md">
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Paper elevation={0} className={classes.paper}>
+                  <Datatable data={data.category[1].greek}/>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
       <Footer />
     </div>
   )

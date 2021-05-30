@@ -51,11 +51,10 @@ const LightTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function SignedOutLinks() {
+export default function SignedInLinks({ logout }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -89,7 +88,7 @@ export default function SignedOutLinks() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
+      <MenuItem onClick={`${handleMenuClose} ${logout}`}>Log out</MenuItem>
     </Menu>
   );
 
